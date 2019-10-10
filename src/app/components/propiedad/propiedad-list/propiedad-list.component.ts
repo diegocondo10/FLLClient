@@ -18,7 +18,6 @@ export class PropiedadListComponent implements OnInit {
 
   async ngOnInit() {
     this.propiedades = await this.srv.getPropiedades()
-    console.log("HOLA MUNDO");
     console.log(this.propiedades);
   }
 
