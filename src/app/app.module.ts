@@ -7,7 +7,6 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { FootComponent } from './components/templates/foot/foot.component';
 import { PropiedadInfoComponent } from './components/propiedad/propiedad-info/propiedad-info.component';
@@ -19,7 +18,6 @@ import { ContactoFormComponent } from './components/contacto/contacto-form/conta
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     NavComponent,
     FootComponent,
     PropiedadInfoComponent,
@@ -47,7 +45,7 @@ export class AppModule {
   ) {
     apollo.create({
       link: httpLink.create({
-        uri: 'http://127.0.0.1:9000/graphql',
+        uri: 'http://localhost:8000/graphql',
         //uri: 'http://34.70.2.34:8000/graphql'
       }),
       cache: new InMemoryCache()
