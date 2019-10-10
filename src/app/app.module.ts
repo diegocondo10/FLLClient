@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ApolloModule, Apollo } from "apollo-angular";
+import { HttpClientModule } from "@angular/common/http";
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,9 +28,28 @@ import { ContactoFormComponent } from './components/contacto/contacto-form/conta
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ApolloModule,
+    HttpLinkModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+  constructor(
+    apollo: Apollo,
+    httpLink: HttpLink
+  ) {
+    apollo.create({
+      link: httpLink.create({
+        //uri: 'http://localhost:8000/graphql',
+        uri: 'http://34.70.2.34:8000/graphql'
+      }),
+      cache: new InMemoryCache()
+    });
+  }
+
+}

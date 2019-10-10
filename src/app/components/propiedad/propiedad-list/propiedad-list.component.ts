@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PropiedadesService } from '../../../services/propiedades.service';
+import { Propiedad } from '../../../models/appCore';
 
 @Component({
   selector: 'app-propiedad-list',
@@ -30,9 +32,13 @@ export class PropiedadListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private srv: PropiedadesService
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.propiedades = await this.srv.getPropiedades()
+    console.log(this.propiedades);
   }
 
   esPar(pos: number): boolean {
