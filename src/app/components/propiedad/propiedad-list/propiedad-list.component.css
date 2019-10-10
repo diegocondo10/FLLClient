@@ -1,0 +1,27 @@
+.propiedad-precio {
+    border-left: solid 12px #fa8231;
+    padding: 4px 0;
+    padding-left: 8px;
+    background-color: #fd9644;
+    color: white;
+    border-radius: 6px;
+    letter-spacing: 2px;
+}
+  
+.propiedad .propiedad-text {
+    padding: 3rem;
+    max-height: 30rem;
+}
+  
+.propiedad .propiedad-img {
+    min-height: 30rem;
+    max-height: 30rem;
+    background-size: cover;
+}
+  
+@media (min-width: 768px) {
+    .propiedad .propiedad-text {
+      padding: 3.5rem 5rem;
+    }
+}
+  

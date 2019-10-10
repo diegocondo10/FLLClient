@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { FootComponent } from './components/templates/foot/foot.component';
 import { PropiedadInfoComponent } from './components/propiedad/propiedad-info/propiedad-info.component';
@@ -15,7 +14,6 @@ import { ContactoFormComponent } from './components/contacto/contacto-form/conta
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     NavComponent,
     FootComponent,
     PropiedadInfoComponent,

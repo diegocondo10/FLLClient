@@ -1,0 +1,30 @@
+.navbar-brand {
+  font-size: 2.7rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.active-page {
+  border-bottom: solid 4px white;
+}
+
+.active-page .nav-link {
+  color: white !important;
+}
+
+.nav-item {
+  font-size: 1.6rem;
+  transition: all 0.2s ease-out;
+  padding: 0 4px;
+  margin: 0 3px;
+}
+
+.nav-link {
+  color: #f7f1e3 !important;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  border-bottom: solid 4px white;
+}

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Fira Sans', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fira Sans', sans-serif !important;
+  font-weight: 700;
+}
+
+.text-color {
+  color: #f7f1e3 !important;
+}
+
+.bg-orange {
+  background-color: #fa8231 !important;
+  color: #fff !important;
+}
+
+a.bg-orange:hover, a.bg-orange:focus,
+button.bg-orange:hover,
+button.bg-orange:focus {
+  background-color: #fd9644 !important;
+}
+
+.bg-bluedark {
+  background-color: #303952 !important;
+}
+
+a.bg-bluedark:hover, a.bg-bluedark:focus,
+button.bg-bluedark:hover,
+button.bg-bluedark:focus {
+  background-color: #596275 !important;
+}
