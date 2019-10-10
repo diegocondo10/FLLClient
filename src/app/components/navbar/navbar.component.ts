@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PropiedadesService } from '../../services/propiedades.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private srv: PropiedadesService
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    console.log("HOLA MUNDO");
+    console.log(await this.srv.getPropiedades({ limit: 10, offset: 0 }));
   }
 
 }
