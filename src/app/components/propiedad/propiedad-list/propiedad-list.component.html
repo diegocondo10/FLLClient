@@ -1,73 +1,84 @@
 <section class="propiedad my-5">
-    <div class="container-fluid p-0">
+  <div class="container-fluid p-0">
 
 
-      <div *ngFor="let p of propiedades; let i = index;">
+    <div *ngFor="let p of propiedades; let i = index;">
 
-        <div *ngIf="esPar(i); then propiedadInpar else propiedadPar">
-
-        </div>
+      <div *ngIf="esPar(i); then propiedadInpar else propiedadPar">
 
       </div>
 
-      <ng-template #propiedadInpar>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-6 order-lg-2 propiedad-img" style="background-image: url('https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?cs=srgb&dl=apartment-books-chairs-2079246.jpg&fm=jpg');"></div>
-  
-          <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
-  
-  
-            <h2>Departamento Ubicado</h2>
-  
-            <h3 class="propiedad-precio">$ 1232</h3>
-  
-            <div class="my-2">
-              <button type="button" class="btn bg-orange">
-                Me interesa
-              </button>
-              <button class="ml-0 ml-md-2 btn bg-orange">
-                Mas informacion
-              </button>
-            </div>
-  
-            <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-  
-  
-          </div>
-        </div>
-      </ng-template>
-      
-      <ng-template #propiedadPar>
-
-        <div class="row no-gutters">
-          <div class="col-lg-6 propiedad-img" style="background-image: url('https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?cs=srgb&dl=cabinet-contemporary-counter-1080721.jpg&fm=jpg');"></div>
-          <div class="col-lg-6 my-auto propiedad-text">
-            <h2>Casa en banos</h2>
-  
-            <h3 class="propiedad-precio">$ 1232</h3>
-  
-            <div class="my-2">
-              <button type="button" class="btn bg-orange">
-                Me interesa
-              </button>
-              <button type="button" class="ml-0 ml-md-2 btn bg-orange">
-                Mas informacion
-              </button>
-            </div>
-  
-            <p class="lead mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  
-  
-          </div>
-        </div>
-      
-      </ng-template>
-
-
-      
     </div>
+
+    <div *ngIf="propiedad">
+
+      <img [src]="propiedad.propiedadfotoSet[0].url | urlFoto" alt="">
+
+    </div>
+
+    <ng-template #propiedadInpar>
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 propiedad-img"
+             style="background-image: url('https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?cs=srgb&dl=apartment-books-chairs-2079246.jpg&fm=jpg');"></div>
+
+        <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
+
+
+          <h2>Departamento Ubicado</h2>
+
+          <h3 class="propiedad-precio">$ 1232</h3>
+
+          <div class="my-2">
+            <button type="button" class="btn bg-orange">
+              Me interesa
+            </button>
+            <button class="ml-0 ml-md-2 btn bg-orange">
+              Mas informacion
+            </button>
+          </div>
+
+          <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #propiedadPar>
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 propiedad-img"
+             style="background-image: url('https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?cs=srgb&dl=cabinet-contemporary-counter-1080721.jpg&fm=jpg');"></div>
+        <div class="col-lg-6 my-auto propiedad-text">
+          <h2>Casa en banos</h2>
+
+          <h3 class="propiedad-precio">$ 1232</h3>
+
+          <div class="my-2">
+            <button type="button" class="btn bg-orange">
+              Me interesa
+            </button>
+            <button type="button" class="ml-0 ml-md-2 btn bg-orange">
+              Mas informacion
+            </button>
+          </div>
+
+          <p class="lead mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+
+        </div>
+      </div>
+
+    </ng-template>
+
+
+  </div>
 </section>
 
 

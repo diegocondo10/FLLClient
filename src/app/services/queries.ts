@@ -6,6 +6,14 @@ query buscarPropiedades($paginacion: Paginacion) {
     propiedades(paginacion: $paginacion) {
       id
       codigo
+      propiedadfotoSet {
+        id
+        url
+      }
+      tipoPropiedad{
+        id
+        nombre
+      }
       persona {
         nombre
         apellido
@@ -19,5 +27,4 @@ query buscarPropiedades($paginacion: Paginacion) {
     }
   }
 }
-
-`
+`;

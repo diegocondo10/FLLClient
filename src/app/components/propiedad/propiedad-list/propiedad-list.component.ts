@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PropiedadesService } from '../../../services/propiedades.service';
-import { Propiedad } from '../../../models/appCore';
+import {Component, OnInit} from '@angular/core';
+import {PropiedadesService} from '../../../services/propiedades.service';
+import {Propiedad} from '../../../models/appCore';
 
 @Component({
   selector: 'app-propiedad-list',
@@ -8,6 +8,10 @@ import { Propiedad } from '../../../models/appCore';
   styleUrls: ['./propiedad-list.component.css']
 })
 export class PropiedadListComponent implements OnInit {
+
+
+  public propiedad: Propiedad;
+
 
   propiedades: Array<any> = [
     {
@@ -34,15 +38,19 @@ export class PropiedadListComponent implements OnInit {
 
   constructor(
     private srv: PropiedadesService
-  ) { }
+  ) {
+  }
 
   async ngOnInit() {
-    this.propiedades = await this.srv.getPropiedades()
-    console.log(this.propiedades);
+
+    const propiedades = await this.srv.getPropiedades();
+    this.propiedad = propiedades[1];
+
+    console.log(this.propiedad.propiedadfotoSet[0].url);
   }
 
   esPar(pos: number): boolean {
-    return pos % 2 == 0;
+    return pos % 2 === 0;
   }
 
 }
