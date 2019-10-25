@@ -15,6 +15,7 @@ import {HomeComponent} from './components/templates/home/home.component';
 import {ContactoComponent} from './components/contacto/contacto/contacto.component';
 import {ContactoFormComponent} from './components/contacto/contacto-form/contacto-form.component';
 import { UrlFotoPipe } from './pipes/url-foto.pipe';
+import { PropiedadFilterComponent } from './components/propiedad/propiedad-filter/propiedad-filter.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UrlFotoPipe } from './pipes/url-foto.pipe';
     HomeComponent,
     ContactoComponent,
     ContactoFormComponent,
-    UrlFotoPipe
+    UrlFotoPipe,
+    PropiedadFilterComponent
   ],
   imports: [
     BrowserModule,
