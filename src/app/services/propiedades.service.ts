@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Apollo} from 'apollo-angular';
 import {FILTROS, GET_PROPIEDADES} from './queries';
-import {Paginacion, Propiedad} from '../models/appCore';
+import {Filtro, Paginacion, Propiedad} from '../models/appCore';
 
 
 @Injectable({
@@ -15,16 +15,17 @@ export class PropiedadesService {
   }
 
 
-  public async getPropiedades(paginacion?: Paginacion): Promise<Propiedad[]> {
+  public async getPropiedades(paginacion?: Paginacion, filtros?: Filtro): Promise<Propiedad[]> {
+
     const query = this.apollo.query({
       query: GET_PROPIEDADES,
       variables: {
-        paginacion: paginacion
-      }
+        paginacion: paginacion,
+        filtros: filtros
+      },
+      fetchPolicy: 'no-cache'
     });
     const promise = await query.toPromise();
-
-
     return promise.data['appCore']['propiedades'];
   }
 

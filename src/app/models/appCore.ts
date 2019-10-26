@@ -67,7 +67,7 @@ export interface Filtro {
   maximo?: number;
   codigo?: string;
   lugar?: string;
-  idTipoPropiedad?: number;
-  idSector?: number;
+  idTipo?: number | 'null';
+  idSector?: number | 'null';
 
 }

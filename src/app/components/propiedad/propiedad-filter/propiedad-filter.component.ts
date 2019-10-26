@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PropiedadesService} from '../../../services/propiedades.service';
 import {Filtro, Sector, TipoPropiedad} from '../../../models/appCore';
 
@@ -9,13 +9,17 @@ import {Filtro, Sector, TipoPropiedad} from '../../../models/appCore';
 })
 export class PropiedadFilterComponent implements OnInit {
 
-  public filtro: Filtro = {
+
+  @Output() buscar = new EventEmitter<Filtro>();
+
+  protected filtro: Filtro = {
     idSector: null,
-    idTipoPropiedad: null
+    idTipo: null
   };
 
-  public tiposPropeidad: TipoPropiedad[];
-  public sectores: Sector[];
+
+  protected tiposPropeidad: TipoPropiedad[];
+  protected sectores: Sector[];
 
 
   constructor(
@@ -25,15 +29,22 @@ export class PropiedadFilterComponent implements OnInit {
 
   async ngOnInit() {
     const result = await this.srv.getFiltros();
-
     this.tiposPropeidad = result['tiposPropiedad'];
     this.sectores = result['sectores'];
-
   }
 
-  async buscar() {
+  protected async buscarPropiedades() {
     this.filtro.lugar = this.filtro.codigo;
-    console.log(this.filtro);
+
+    if (this.filtro.idSector === 'null') {
+      this.filtro.idSector = null;
+    }
+    if (this.filtro.idTipo === 'null') {
+      this.filtro.idSector = null;
+    }
+    this.buscar.emit(this.filtro);
+
   }
+
 
 }

@@ -5,7 +5,6 @@
 
       <div class="input-group ">
         <input
-          required
           class="form-control form-control-sm form-inline"
           type="text"
           placeholder="Buscar"
@@ -17,13 +16,13 @@
 
         <select class="custom-select custom-select-sm" id="select" name="sectoresSel"
                 [(ngModel)]="filtro.idSector">
-          <option selected disabled [value]="null">Sectores</option>
+          <option [value]="null">Sectores</option>
           <option [value]="sector.id" *ngFor="let sector of sectores">{{sector.nombre}}</option>
         </select>
 
         <select class="custom-select custom-select-sm" id="tipoPropiedadSel" name="tipoPropiedadSel"
-                [(ngModel)]="filtro.idTipoPropiedad">
-          <option selected disabled [value]="null">Tipos de Propiedad</option>
+                [(ngModel)]="filtro.idTipo">
+          <option [value]="null">Tipos de Propiedad</option>
           <option [value]="tipo.id" *ngFor="let tipo of tiposPropeidad">{{tipo.nombre}}</option>
         </select>
 
@@ -45,7 +44,7 @@
           <button class="btn btn-sm bg-orange"
                   type="button"
                   [disabled]="form.invalid"
-                  (click)="buscar()">
+                  (click)="buscarPropiedades()">
             Buscar
           </button>
         </div>

@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
 
 export const GET_PROPIEDADES = gql`
-query buscarPropiedades($paginacion: Paginacion) {
+query buscarPropiedades($paginacion: Paginacion, $filtros: FiltrosPropiedades) {
   appCore {
-    propiedades(paginacion: $paginacion) {
+    propiedades(paginacion: $paginacion, filtros: $filtros) {
       id
       codigo
       propiedadfotoSet {
