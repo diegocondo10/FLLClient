@@ -12,7 +12,7 @@ export class PropiedadFilterComponent implements OnInit {
 
   @Output() buscar = new EventEmitter<Filtro>();
 
-  protected filtro: Filtro = {
+  public filtro: Filtro = {
     idSector: null,
     idTipo: null
   };
