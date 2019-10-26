@@ -40,7 +40,7 @@ export class PropiedadFilterComponent implements OnInit {
       this.filtro.idSector = null;
     }
     if (this.filtro.idTipo === 'null') {
-      this.filtro.idSector = null;
+      this.filtro.idTipo = null;
     }
     this.buscar.emit(this.filtro);
 
