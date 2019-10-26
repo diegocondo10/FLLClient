@@ -44,9 +44,7 @@ export class PropiedadListComponent implements OnInit {
   async ngOnInit() {
 
     const propiedades = await this.srv.getPropiedades();
-    this.propiedad = propiedades[1];
-
-    console.log(this.propiedad.propiedadfotoSet[0].url);
+    console.log(propiedades);
   }
 
   esPar(pos: number): boolean {

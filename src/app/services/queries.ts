@@ -28,3 +28,20 @@ query buscarPropiedades($paginacion: Paginacion) {
   }
 }
 `;
+
+export const FILTROS = gql`
+{
+  appCore {
+    filtros {
+      tiposPropiedad {
+        id
+        nombre
+      }
+      sectores {
+        id
+        nombre
+      }
+    }
+  }
+}
+`;

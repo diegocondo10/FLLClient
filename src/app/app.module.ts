@@ -14,8 +14,9 @@ import {PropiedadListComponent} from './components/propiedad/propiedad-list/prop
 import {HomeComponent} from './components/templates/home/home.component';
 import {ContactoComponent} from './components/contacto/contacto/contacto.component';
 import {ContactoFormComponent} from './components/contacto/contacto-form/contacto-form.component';
-import { UrlFotoPipe } from './pipes/url-foto.pipe';
-import { PropiedadFilterComponent } from './components/propiedad/propiedad-filter/propiedad-filter.component';
+import {UrlFotoPipe} from './pipes/url-foto.pipe';
+import {PropiedadFilterComponent} from './components/propiedad/propiedad-filter/propiedad-filter.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PropiedadFilterComponent } from './components/propiedad/propiedad-filte
     AppRoutingModule,
     ApolloModule,
     HttpLinkModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

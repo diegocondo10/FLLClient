@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PropiedadesService} from '../../../services/propiedades.service';
+import {Filtro, Sector, TipoPropiedad} from '../../../models/appCore';
 
 @Component({
   selector: 'app-propiedad-filter',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropiedadFilterComponent implements OnInit {
 
-  constructor() { }
+  public filtro: Filtro = {
+    idSector: null,
+    idTipoPropiedad: null
+  };
 
-  ngOnInit() {
+  public tiposPropeidad: TipoPropiedad[];
+  public sectores: Sector[];
+
+
+  constructor(
+    private srv: PropiedadesService
+  ) {
+  }
+
+  async ngOnInit() {
+    const result = await this.srv.getFiltros();
+
+    this.tiposPropeidad = result['tiposPropiedad'];
+    this.sectores = result['sectores'];
+
+  }
+
+  async buscar() {
+    this.filtro.lugar = this.filtro.codigo;
+    console.log(this.filtro);
   }
 
 }

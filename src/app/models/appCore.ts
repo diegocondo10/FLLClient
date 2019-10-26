@@ -60,3 +60,14 @@ export interface PropiedadFoto {
   url?: string;
   activo?: boolean;
 }
+
+
+export interface Filtro {
+  minimo?: number;
+  maximo?: number;
+  codigo?: string;
+  lugar?: string;
+  idTipoPropiedad?: number;
+  idSector?: number;
+
+}

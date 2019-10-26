@@ -1,1 +1,58 @@
-<p>propiedad-filter works!</p>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="nav navbar-nav text-white">
+
+    <form #form="ngForm" class="form-inline">
+
+      <div class="input-group ">
+        <input
+          required
+          class="form-control form-control-sm form-inline"
+          type="text"
+          placeholder="Buscar"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          name="buscarIn"
+          [(ngModel)]="filtro.codigo"
+        >
+
+        <select class="custom-select custom-select-sm" id="select" name="sectoresSel"
+                [(ngModel)]="filtro.idSector">
+          <option selected disabled [value]="null">Sectores</option>
+          <option [value]="sector.id" *ngFor="let sector of sectores">{{sector.nombre}}</option>
+        </select>
+
+        <select class="custom-select custom-select-sm" id="tipoPropiedadSel" name="tipoPropiedadSel"
+                [(ngModel)]="filtro.idTipoPropiedad">
+          <option selected disabled [value]="null">Tipos de Propiedad</option>
+          <option [value]="tipo.id" *ngFor="let tipo of tiposPropeidad">{{tipo.nombre}}</option>
+        </select>
+
+        <input class="form-control form-control-sm"
+               type="number" name="minimoIn"
+               id="minimoIn"
+               placeholder="Precio Minimo"
+               [(ngModel)]="filtro.minimo">
+
+        <input class="form-control form-control-sm"
+               type="number"
+               name="maximoIn"
+               id="maximoIn"
+               placeholder="Precio Maximo"
+               [(ngModel)]="filtro.maximo">
+
+
+        <div class="input-group-append">
+          <button class="btn btn-sm bg-orange"
+                  type="button"
+                  [disabled]="form.invalid"
+                  (click)="buscar()">
+            Buscar
+          </button>
+        </div>
+
+      </div>
+
+
+    </form>
+  </div>
+</nav>
