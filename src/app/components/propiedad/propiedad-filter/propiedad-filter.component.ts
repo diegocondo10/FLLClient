@@ -12,14 +12,14 @@ export class PropiedadFilterComponent implements OnInit {
 
   @Output() buscar = new EventEmitter<Filtro>();
 
-  public filtro: Filtro = {
+  filtro: Filtro = {
     idSector: null,
     idTipo: null
   };
 
 
-  protected tiposPropeidad: TipoPropiedad[];
-  protected sectores: Sector[];
+  tiposPropeidad: TipoPropiedad[];
+  sectores: Sector[];
 
 
   constructor(
@@ -33,7 +33,7 @@ export class PropiedadFilterComponent implements OnInit {
     this.sectores = result['sectores'];
   }
 
-  protected async buscarPropiedades() {
+  async buscarPropiedades() {
     this.filtro.lugar = this.filtro.codigo;
 
     if (this.filtro.idSector === 'null') {
