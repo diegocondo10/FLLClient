@@ -45,6 +45,7 @@ export interface Propiedad {
   precioPromocional?: number;
   precioFijo?: number;
   observacion?: string;
+  urlFotoPrincipal?: string;
   estado?: 'DISPONIBLE' | 'VENDIDO';
   activo?: boolean;
   // captadorSet?: [CaptadorType]
@@ -69,5 +70,10 @@ export interface Filtro {
   lugar?: string;
   idTipo?: number | 'null';
   idSector?: number | 'null';
+}
 
+
+export interface Fragment {
+  name?: string;
+  content?: string;
 }

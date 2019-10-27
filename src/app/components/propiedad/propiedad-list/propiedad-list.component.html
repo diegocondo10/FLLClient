@@ -3,27 +3,35 @@
   <div class="container-fluid p-0">
 
 
-    <div *ngFor="let p of propiedades; let i = index;">
+    <div *ngFor="let propiedad of propiedades; let i = index;">
 
-      <div *ngIf="esPar(i); then propiedadInpar else propiedadPar">
+      <!--      <div *ngIf="esPar(i); then propiedadInpar else propiedadPar">
+            </div>-->
 
-      </div>
+      <ng-container
+        [ngTemplateOutlet]="esPar(i)? propiedadInpar : propiedadPar"
+        [ngTemplateOutletContext]="{p:propiedad}"
+      ></ng-container>
 
     </div>
 
-    <ng-template #propiedadInpar>
-
+    <ng-template #propiedadInpar let-link='p'>
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2 propiedad-img"
-             style="background-image: url('https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?cs=srgb&dl=apartment-books-chairs-2079246.jpg&fm=jpg');"></div>
+             style="background-image: url('https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?cs=srgb&dl=apartment-books-chairs-2079246.jpg&fm=jpg');">
+
+        </div>
+
+        <!--<img class="col-lg-6 order-lg-2 propiedad-img" [src]="link.urlFotoPrincipal|urlFoto" alt="">-->
+
 
         <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
 
 
-          <h2>Departamento Ubicado</h2>
+          <h2>{{link.callePrincipal}}</h2>
 
-          <h3 class="propiedad-precio">$ 1232</h3>
+          <h3 class="propiedad-precio">$ {{link.precioPromocional}}</h3>
 
           <div class="my-2">
             <button type="button" class="btn bg-orange">
@@ -34,24 +42,23 @@
             </button>
           </div>
 
-          <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <p class="lead mb-0">{{link.observacion}}</p>
 
 
         </div>
       </div>
     </ng-template>
 
-    <ng-template #propiedadPar>
+    <ng-template #propiedadPar let-link='p'>
 
       <div class="row no-gutters">
         <div class="col-lg-6 propiedad-img"
              style="background-image: url('https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?cs=srgb&dl=cabinet-contemporary-counter-1080721.jpg&fm=jpg');"></div>
         <div class="col-lg-6 my-auto propiedad-text">
-          <h2>Casa en banos</h2>
 
-          <h3 class="propiedad-precio">$ 1232</h3>
+          <h2>{{link.callePrincipal}}</h2>
+
+          <h3 class="propiedad-precio">$ {{link.precioPromocional}}</h3>
 
           <div class="my-2">
             <button type="button" class="btn bg-orange">
@@ -62,9 +69,7 @@
             </button>
           </div>
 
-          <p class="lead mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
+          <p class="lead mb-0">{{link.observacion}}</p>
 
 
         </div>

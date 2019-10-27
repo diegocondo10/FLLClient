@@ -10,31 +10,7 @@ import {Filtro, Propiedad} from '../../../models/appCore';
 export class PropiedadListComponent implements OnInit {
 
 
-  public propiedad: Propiedad;
-
-
-  propiedades: Array<any> = [
-    {
-      pos: 1,
-      img: ''
-    },
-    {
-      pos: 2,
-      img: ''
-    },
-    {
-      pos: 3,
-      img: ''
-    },
-    {
-      pos: 4,
-      img: ''
-    },
-    {
-      pos: 5,
-      img: ''
-    }
-  ];
+  propiedades: Propiedad[];
 
   constructor(
     private srv: PropiedadesService
@@ -42,11 +18,8 @@ export class PropiedadListComponent implements OnInit {
   }
 
   async ngOnInit() {
-    const paginacion = {
-      limit: 1,
-      offset: 0
-    };
-    const propiedades = await this.srv.getPropiedades(paginacion);
+
+    this.propiedades = await this.srv.getPropiedades({limit: 5});
   }
 
   esPar(pos: number): boolean {
