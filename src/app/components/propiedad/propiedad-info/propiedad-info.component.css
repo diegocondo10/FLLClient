@@ -1,0 +1,11 @@
+/* INFORMACION PROPIEDAD */
+.propiedad .propiedad-info {
+    padding: 3rem;
+}
+
+@media (min-width: 768px) {
+    .propiedad .propiedad-info {
+        padding: 3.5rem 5rem;
+    }
+}
+  
