@@ -11,15 +11,14 @@
       <div class="collapse navbar-collapse " id="navbar-inmo">
 
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active-page">
-            <a class="nav-link" >Inicio</a>
+          <li [routerLinkActive]="['active-page']" class="nav-item">
+            <a [routerLink]="['buscar']" class="nav-link" >Buscar</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link">Casas</a>
+          
+          <li [routerLinkActive]="['active-page']" class="nav-item">
+            <a  [routerLink]="['']" class="nav-link" >Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link">Terrenos</a>
-          </li>
+          
         </ul>
 
       </div>
