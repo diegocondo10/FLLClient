@@ -1,34 +1,6 @@
 import gql from 'graphql-tag';
 import {Fragment} from '../models/appCore';
 
-export const GET_PROPIEDADES = gql`
-query buscarPropiedades($paginacion: Paginacion, $filtros: FiltrosPropiedades) {
-  appCore {
-    propiedades(paginacion: $paginacion, filtros: $filtros) {
-      id
-      codigo
-      propiedadfotoSet {
-        id
-        url
-      }
-      tipoPropiedad{
-        id
-        nombre
-      }
-      persona {
-        nombre
-        apellido
-        telefono
-      }
-      sector {
-        nombre
-      }
-      callePrincipal
-      calleSecundaria
-    }
-  }
-}
-`;
 
 export const FILTROS = gql`
 {
@@ -80,3 +52,34 @@ query buscarPropiedades($paginacion: Paginacion, $filtros: FiltrosPropiedades) {
 ${fragment.content}
   `;
 };
+
+
+export const GET_PROPIEDAD_BY_ID = gql`
+
+query buscarPropiedad($propiedadId: ID!) {
+  appCore {
+    propiedad(propiedadId: $propiedadId) {
+      id
+      observacion
+      precioPromocional
+      callePrincipal
+      calleSecundaria
+      areaTotal
+      areaConstruccion
+      urlFotoPrincipal
+      tipoPropiedad {
+        id
+        nombre
+      }
+      sector {
+        nombre
+      }
+      propiedadfotoSet {
+        id
+        url
+      }
+    }
+  }
+}
+
+`;

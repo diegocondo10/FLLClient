@@ -1,71 +1,82 @@
-<section class="propiedad">
-    <div class="container-fluid p-0">
+<section class="propiedad" *ngIf="propiedad">
+  <div class="container-fluid p-0">
 
-      <div class="row no-gutters">
+    <div class="row no-gutters">
 
-        <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
+      <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
 
-          <h2>Departamento - Ubicado</h2>
+        <h2>{{propiedad.tipoPropiedad.nombre}} - Ubicado</h2>
 
-          <h3 class="propiedad-precio">$ 1232</h3>
+        <h3 class="propiedad-precio">$ {{propiedad.precioPromocional}}</h3>
 
-          <div class="my-2">
-            <button type="button" class="btn btn-orange">
-              Me interesa
-            </button>
-          </div>
-
-          <p class="lead mb-0">Dirrecion: Av. Americas y Turuhuayco</p>
-          <p class="lead mb-0">Area total: 1223 mt2</p>
-          <p class="lead mb-0">Area construnccion: 223 mt2</p>
-
+        <div class="my-2">
+          <button type="button" class="btn bg-orange">
+            Me interesa
+          </button>
         </div>
 
+        <p class="lead mb-0">Dirrecion: {{propiedad.callePrincipal}} y {{propiedad.calleSecundaria}}</p>
+        <p class="lead mb-0">Area total: {{propiedad.areaTotal}} mt2</p>
+        <p class="lead mb-0">Area construnccion: {{propiedad.areaConstruccion}} mt2</p>
 
-        <div class="col-lg-6 order-lg-2 propiedad-img">
+      </div>
 
 
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://images.pexels.com/photos/2067423/pexels-photo-2067423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100 propiedad-img" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://images.pexels.com/photos/2089799/pexels-photo-2089799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100 propiedad-img" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://images.pexels.com/photos/906024/pexels-photo-906024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100 propiedad-img" alt="...">
-              </div>
+      <div class="col-lg-6 order-lg-2 propiedad-img">
+
+
+        <div id="carouselExampleIndicators" class="carousel slide"
+             *ngIf="propiedad.propiedadfotoSet.length >0; else sinImagen"
+             data-ride="carousel">
+
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" [ngClass]="{'active':i==0}"
+                *ngFor="let f of propiedad.propiedadfotoSet; let i = index;"></li>
+          </ol>
+          <div class="carousel-inner">
+
+            <div class="carousel-item"
+                 [ngClass]="{'active': i==0 }"
+                 *ngFor="let foto of propiedad.propiedadfotoSet;let i = index;">
+              <img
+                [src]="foto.url | urlFoto"
+                class="d-block w-100 propiedad-img" alt="...">
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Siguiente</span>
-            </a>
+
           </div>
 
 
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+
+
         </div>
 
 
-        <div class="col-12 order-3 propiedad-info">
-
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        </div>
+        <ng-template #sinImagen>
+          <img class="img-fluid" [src]="propiedad.urlFotoPrincipal|urlFoto" alt="">
+        </ng-template>
 
 
       </div>
 
 
+      <div class="col-12 order-3 propiedad-info">
+
+        <p class="lead text-justify">{{propiedad.observacion}}</p>
+
+      </div>
+
+
     </div>
+
+  </div>
+
+
 </section>

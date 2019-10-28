@@ -24,9 +24,7 @@
         >
 
         </div>
-
-        <!--<img class="col-lg-6 order-lg-2 propiedad-img" [src]="link.urlFotoPrincipal|urlFoto" alt="">-->
-
+        
 
         <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
 
@@ -39,7 +37,7 @@
             <button type="button" class="btn bg-orange">
               Me interesa
             </button>
-            <button class="ml-0 ml-md-2 btn bg-orange">
+            <button type="button" class="ml-0 ml-md-2 btn bg-orange" routerLink="/propiedad/{{link.id}}">
               Mas informacion
             </button>
           </div>
@@ -67,7 +65,7 @@
             <button type="button" class="btn bg-orange">
               Me interesa
             </button>
-            <button type="button" class="ml-0 ml-md-2 btn bg-orange">
+            <button type="button" class="ml-0 ml-md-2 btn bg-orange" routerLink="/propiedad/{{link.id}}">
               Mas informacion
             </button>
           </div>

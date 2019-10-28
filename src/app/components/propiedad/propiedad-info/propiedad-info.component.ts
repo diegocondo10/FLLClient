@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PropiedadesService} from '../../../services/propiedades.service';
+import {Router, ActivatedRoute} from '@angular/router';
+import {Propiedad} from '../../../models/appCore';
 
 @Component({
   selector: 'app-propiedad-info',
@@ -10,9 +13,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropiedadInfoComponent implements OnInit {
 
-  constructor() { }
+  public propiedad: Propiedad;
 
-  ngOnInit() {
+
+  constructor(
+    private srv: PropiedadesService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+  }
+
+  async ngOnInit() {
+    const id = this.route.snapshot.params['id'];
+    this.propiedad = await this.srv.getPropiedadById(id);
+    console.log(this.propiedad.propiedadfotoSet);
+
   }
 
 }

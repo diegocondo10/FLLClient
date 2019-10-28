@@ -1,17 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/templates/home/home.component';
-import { PropiedadInfoComponent } from './components/propiedad/propiedad-info/propiedad-info.component';
-
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HomeComponent} from './components/templates/home/home.component';
+import {PropiedadInfoComponent} from './components/propiedad/propiedad-info/propiedad-info.component';
 
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: HomeComponent
   },
-  { 
-    path: 'propiedad/:idPropiedad', 
+  {
+    path: 'propiedad/:id',
     component: PropiedadInfoComponent
   },
 ];
@@ -20,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
