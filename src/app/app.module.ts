@@ -17,6 +17,9 @@ import {ContactoFormComponent} from './components/contacto/contacto-form/contact
 import {UrlFotoPipe} from './pipes/url-foto.pipe';
 import {PropiedadFilterComponent} from './components/propiedad/propiedad-filter/propiedad-filter.component';
 import {FormsModule} from '@angular/forms';
+import { SobreNosotrosComponent } from './components/info/sobre-nosotros/sobre-nosotros.component';
+import { DireccionComponent } from './components/info/direccion/direccion.component';
+import { ContactanosComponent } from './components/info/contactanos/contactanos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {FormsModule} from '@angular/forms';
     ContactoComponent,
     ContactoFormComponent,
     UrlFotoPipe,
-    PropiedadFilterComponent
+    PropiedadFilterComponent,
+    SobreNosotrosComponent,
+    DireccionComponent,
+    ContactanosComponent
   ],
   imports: [
     BrowserModule,
