@@ -1,12 +1,11 @@
-<!--<app-propiedad-filter (buscar)="buscar($event)"></app-propiedad-filter>-->
+<!--
 <section class="propiedad my-5">
   <div class="container-fluid p-0">
 
 
     <div *ngFor="let propiedad of propiedades; let i = index;">
 
-      <!--      <div *ngIf="esPar(i); then propiedadInpar else propiedadPar">
-            </div>-->
+
 
       <ng-container
         [ngTemplateOutlet]="esPar(i)? propiedadInpar : propiedadPar"
@@ -24,7 +23,7 @@
         >
 
         </div>
-        
+
 
         <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
 
@@ -81,5 +80,41 @@
 
   </div>
 </section>
+-->
+
+<div class="container-fluid my-5">
+
+  <div class="row">
 
 
+    <div class="col-sm-6 col-lg-4 mb-3" *ngFor="let propiedad of propiedades">
+
+      <div class="card" style="height: 380px">
+
+
+        <img class="img-fluid" style="height: 250px; width: 100%" src="{{propiedad.urlFotoPrincipal |urlFoto}}" alt="">
+
+        <div class=" card-img-overlay">
+          <p class="propiedad-precio">$ {{propiedad.precioPromocional}}</p>
+        </div>
+
+        <div class="card-body">
+          <h6>
+            {{propiedad.callePrincipal}} y {{propiedad.calleSecundaria}}
+          </h6>
+          <h6>
+            SECTOR: {{propiedad.sector.nombre}}
+          </h6>
+          <h6>
+            AREA TOTAL: {{propiedad.areaTotal}}
+          </h6>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>

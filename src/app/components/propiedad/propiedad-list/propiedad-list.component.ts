@@ -19,16 +19,13 @@ export class PropiedadListComponent implements OnInit {
 
   async ngOnInit() {
 
-    this.propiedades = await this.srv.getPropiedades({limit: 5});
+    this.propiedades = await this.srv.getPropiedades({limit: 10});
+    console.log(this.propiedades);
   }
 
   esPar(pos: number): boolean {
     return pos % 2 === 0;
   }
 
-  async buscar($event: Filtro) {
-    const result = await this.srv.getPropiedades(null, $event);
-    console.log(result);
-  }
 
 }

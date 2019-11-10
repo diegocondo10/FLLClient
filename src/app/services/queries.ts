@@ -24,7 +24,7 @@ export const FRAG_PROPIEDADES_HOME: Fragment = {
   content: `
   fragment infoHome on PropiedadType {
   id
-  observacion(limit:-1)
+  observacion(limit:90)
   urlFotoPrincipal
   precioPromocional
   callePrincipal
