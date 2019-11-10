@@ -23,20 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'buscar',
-    component: PropiedadFilterComponent,
-    children: [
-      {
-        path: 'resultados',
-        component: PropiedadListComponent
-      }, {
-        path: 'resultados/:jsonFiltros',
-        component: PropiedadListComponent
-      },
-      {
-        path: 'resultado/:id',
-        component: PropiedadInfoComponent
-      },
-    ]
+    component: PropiedadListComponent,
   },
 
   {

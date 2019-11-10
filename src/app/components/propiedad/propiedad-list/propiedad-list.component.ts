@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropiedadesService} from '../../../services/propiedades.service';
 import {Filtro, Propiedad} from '../../../models/appCore';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-propiedad-list',
@@ -13,18 +14,19 @@ export class PropiedadListComponent implements OnInit {
   propiedades: Propiedad[];
 
   constructor(
-    private srv: PropiedadesService
+    private srv: PropiedadesService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
   }
 
   async ngOnInit() {
-
     this.propiedades = await this.srv.getPropiedades({limit: 10});
-    console.log(this.propiedades);
   }
 
-  esPar(pos: number): boolean {
-    return pos % 2 === 0;
+
+  async buscarPropiedades($event) {
+    this.propiedades = await this.srv.getPropiedades({limit: 10}, $event);
   }
 
 
