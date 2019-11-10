@@ -82,17 +82,19 @@
 </section>
 -->
 
-<app-propiedad-filter (buscar)="buscarPropiedades($event)" ></app-propiedad-filter>
+<app-propiedad-filter (buscar)="buscarPropiedades($event)"></app-propiedad-filter>
 
 <div class="container-fluid my-5">
 
-  <div class="row">
+  <div class="row justify-content-center">
 
 
     <div class="col-sm-6 col-lg-4 mb-3" *ngFor="let propiedad of propiedades">
 
-      <div class="card" style="height: 380px">
-        <img class="img-fluid" style="height: 250px; width: 100%" src="{{propiedad.urlFotoPrincipal |urlFoto}}" alt="">
+      <div class="card" style="height: 380px; width: 100%">
+        <div class="card-header">
+          <img style="height: 220px; width: 100%" src="{{propiedad.urlFotoPrincipal |urlFoto}}" alt="">
+        </div>
 
         <div class="card-body">
           <h6 class="propiedad-precio">{{propiedad.precioPromocional}}</h6>
@@ -106,12 +108,16 @@
             AREA TOTAL: {{propiedad.areaTotal}}
           </h6>
         </div>
+        <!--CARD-BODY-->
+
       </div>
+      <!--CARD-->
 
 
     </div>
-
+    <!--COL-->
 
   </div>
+  <!--ROW-->
 
 </div>
