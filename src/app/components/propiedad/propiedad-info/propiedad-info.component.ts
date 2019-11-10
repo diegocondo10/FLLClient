@@ -26,8 +26,14 @@ export class PropiedadInfoComponent implements OnInit {
   async ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.propiedad = await this.srv.getPropiedadById(id);
-    console.log(this.propiedad.propiedadfotoSet);
+  }
 
+  buscar($event) {
+    this.router.navigate(['/buscar'], {
+      queryParams: {
+        filtro: JSON.stringify($event)
+      }
+    });
   }
 
 }

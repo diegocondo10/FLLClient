@@ -18,14 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'buscar',
-    pathMatch: 'full',
-    redirectTo: 'buscar/resultados'
-  },
-  {
-    path: 'buscar',
     component: PropiedadListComponent,
   },
-
   {
     path: 'nosotros',
     component: SobreNosotrosComponent
@@ -37,6 +31,10 @@ const routes: Routes = [
   {
     path: 'contactanos',
     component: ContactanosComponent
+  },
+  {
+    path: 'propiedad/:id',
+    component: PropiedadInfoComponent
   }
 ];
 

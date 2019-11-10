@@ -21,13 +21,18 @@ export class PropiedadListComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.propiedades = await this.srv.getPropiedades({limit: 10});
+    const filtro = JSON.parse(this.route.snapshot.queryParamMap.get('filtro'));
+    this.propiedades = await this.srv.getPropiedades({limit: 10}, filtro);
   }
 
 
   async buscarPropiedades($event) {
     this.propiedades = await this.srv.getPropiedades({limit: 10}, $event);
+    this.router.navigate(['buscar']);
   }
 
+  propiedadInfo(id: number) {
+    this.router.navigate(['propiedad', id]);
+  }
 
 }
