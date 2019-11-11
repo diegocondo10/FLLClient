@@ -1,0 +1,57 @@
+
+header.cabecera {
+    position: relative;
+    background-color: #343a40;
+    background: url("https://images.pexels.com/photos/2079434/pexels-photo-2079434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+  
+header.cabecera .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+  
+header.cabecera h1 {
+    font-size: 2rem;
+}
+  
+@media (min-width: 768px) {
+    header.cabecera {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+    header.cabecera h1 {
+        font-size: 3rem;  
+    }
+}
+
+/* Para lo que ofertamos  */
+
+
+.nosotros-icons {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+  
+.nosotros-icons .nosotros-icons-item {
+    max-width: 20rem;
+}
+  
+.nosotros-icons .nosotros-icons-item .nosotros-icons-icon {
+    height: 7rem;
+}
+  
+.nosotros-icons .nosotros-icons-item .nosotros-icons-icon i {
+    font-size: 4.5rem;
+}
+  
+.nosotros-icons .nosotros-icons-item:hover .nosotros-icons-icon i {
+    font-size: 5rem;
+}

@@ -1,0 +1,13 @@
+.equipo {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+  
+.equipo .equipo-item {
+    max-width: 15rem;
+}
+  
+.equipo .equipo-item img {
+    max-width: 9rem;
+    box-shadow: 0px 5px 5px 0px #adb5bd;
+}
