@@ -33,6 +33,10 @@ export const FRAG_PROPIEDADES_HOME: Fragment = {
     id
     nombre
   }
+  tipoPropiedad{
+    id
+    nombre
+  }
 }
 
   `

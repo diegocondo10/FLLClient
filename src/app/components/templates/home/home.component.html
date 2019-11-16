@@ -13,6 +13,65 @@
     </div>
 </header>
 
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+
+        <div class="col-12">
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf="propiedades">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators"
+                        [ngClass]="{'active':i==0}"
+                        *ngFor="let propiedad of propiedades; let i = index;"
+                        data-slide-to="0"
+                    >
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+
+                    <div class="carousel-item" [ngClass]="{'active': i==0 }"
+                         *ngFor="let propiedad of propiedades;let i = index;">
+
+                        <img [src]="propiedad.urlFotoPrincipal | urlFoto"
+                             class="img-fluid w-100" alt="...">
+
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 *ngIf="propiedad.tipoPropiedad">{{propiedad.tipoPropiedad.nombre}}</h3>
+                            <button class="btn bg-orange">Ver Mas</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
 <!-- Ofertas -->
 <section class="nosotros-icons bg-light text-center">
     <div class="container">
@@ -29,7 +88,7 @@
             <div class="col-lg-4">
                 <div class="nosotros-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                     <div class="nosotros-icons-icon d-flex">
-                            <img class="mx-auto" src="../../../../assets/compra.png" alt="">
+                        <img class="mx-auto" src="../../../../assets/compra.png" alt="">
                     </div>
                     <h3>Compra</h3>
                     <p class="lead mb-0">Casas, departamentos, terrenos, naves.</p>
