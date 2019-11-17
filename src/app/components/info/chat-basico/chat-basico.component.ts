@@ -21,7 +21,7 @@ export class ChatBasicoComponent implements OnInit {
     ngOnInit() {
     }
 
-    private togleChat() {
+    public togleChat() {
         if (this.mostrar) {
             this.ocultarChat();
         } else {
