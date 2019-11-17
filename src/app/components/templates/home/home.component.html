@@ -21,7 +21,6 @@
         <div class="col-12">
 
 
-
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf="propiedades">
 
                 <ol class="carousel-indicators">
@@ -38,12 +37,13 @@
                          *ngFor="let propiedad of propiedades;let i = index;">
 
                         <img [src]="propiedad.urlFotoPrincipal | urlFoto"
-                             class="w-100" alt="..." >
+                             class="w-100" alt="..." routerLink="/propiedad/{{propiedad.id}}">
 
                         <div class="carousel-caption ">
                             <h3 *ngIf="propiedad.tipoPropiedad">{{propiedad.tipoPropiedad.nombre}}</h3>
                             <h4>{{propiedad.titulo}}</h4>
-                            <button class="btn btn-sm bg-orange">Ver Mas</button>
+                            <button class="btn btn-sm bg-orange" routerLink="/propiedad/{{propiedad.id}}">Ver Mas
+                            </button>
                         </div>
 
                     </div>
@@ -64,10 +64,6 @@
             </div>
 
 
-
-
-
-
         </div>
 
     </div>
@@ -75,12 +71,7 @@
 </div>
 
 
-
-
-
-
-
-
+<app-propiedad-list [paginacion]="paginacion"></app-propiedad-list>
 
 <!-- Ofertas -->
 <section class="nosotros-icons bg-light text-center">

@@ -4,7 +4,7 @@
 
         <ul class="nav nav-justified w-100 flex-column flex-sm-row">
             <li class="nav-item" *ngFor="let tipo of tiposPropeidad">
-                <a class="nav-link text-white tipo-propiedad" >{{tipo.nombre}}</a>
+                <a class="nav-link text-white tipo-propiedad" (click)="navBuscar(tipo.id)">{{tipo.nombre}}</a>
             </li>
         </ul>
 

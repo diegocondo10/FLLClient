@@ -12,35 +12,35 @@ import {PropiedadListComponent} from './components/propiedad/propiedad-list/prop
 
 const routes: Routes = [
 
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'buscar',
-    component: PropiedadListComponent,
-  },
-  {
-    path: 'nosotros',
-    component: SobreNosotrosComponent
-  },
-  {
-    path: 'direccion',
-    component: DireccionComponent
-  },
-  {
-    path: 'contactanos',
-    component: ContactanosComponent
-  },
-  {
-    path: 'propiedad/:id',
-    component: PropiedadInfoComponent
-  }
+    {
+        path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'buscar',
+        component: PropiedadListComponent,
+    },
+    {
+        path: 'nosotros',
+        component: SobreNosotrosComponent
+    },
+    {
+        path: 'direccion',
+        component: DireccionComponent
+    },
+    {
+        path: 'contactanos',
+        component: ContactanosComponent
+    },
+    {
+        path: 'propiedad/:id',
+        component: PropiedadInfoComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {
 }

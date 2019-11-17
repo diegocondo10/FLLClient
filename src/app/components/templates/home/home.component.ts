@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Propiedad} from '../../../models/appCore';
+import {Paginacion, Propiedad} from '../../../models/appCore';
 import {PropiedadesService} from '../../../services/propiedades.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -10,9 +11,9 @@ import {PropiedadesService} from '../../../services/propiedades.service';
 export class HomeComponent implements OnInit {
 
     public propiedades: Propiedad[];
+    public paginacion: Paginacion = {limit: 4};
 
-
-    constructor(private srv: PropiedadesService) {
+    constructor(private srv: PropiedadesService, private router: Router) {
     }
 
     async ngOnInit() {
@@ -30,5 +31,6 @@ export class HomeComponent implements OnInit {
         );
         console.log(this.propiedades);
     }
+
 
 }

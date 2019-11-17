@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PropiedadesService} from '../../../services/propiedades.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Propiedad} from '../../../models/appCore';
-import { DomSanitizer } from '@angular/platform-browser';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-propiedad-info',
@@ -41,7 +41,7 @@ export class PropiedadInfoComponent implements OnInit {
     textoHtml(texto) {
         let newTexto = '';
         for (let i = 0; i < texto.length; i++) {
-            if (texto.charCodeAt(i) == 10) {
+            if (texto.charCodeAt(i) === 10) {
                 newTexto += '<br>';
             } else {
                 newTexto += texto.charAt(i);

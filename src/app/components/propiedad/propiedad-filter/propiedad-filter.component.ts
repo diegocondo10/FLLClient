@@ -45,5 +45,10 @@ export class PropiedadFilterComponent implements OnInit {
 
     }
 
+    navBuscar(id: number) {
+        this.filtro.idTipo = id;
+        this.buscarPropiedades();
+    }
+
 
 }
