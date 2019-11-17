@@ -37,3 +37,161 @@ button.bg-bluedark:hover,
 button.bg-bluedark:focus {
   background-color: #596275 !important;
 }
+
+/* TODO ESTO ES DEL CHAT */
+.fijo-derecha {
+  float: right;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  z-index: 100;
+}
+
+.mostrar {
+  display: block;
+}
+
+.ocultar {
+  display: none;
+}
+
+#chat{
+  background-color: #eee;
+  width: 400px;
+  border-radius: 8px 8px 0 0;
+}
+
+#chat-header{
+  background-color: #fa8231;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  font-size: 1.4em;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+}
+
+#chat-header:hover {
+  background-color: #fd9644;
+}
+
+#caja-mensaje{
+  width: 400px;
+  border-top: solid 3px #fa8231;
+}
+
+#caja-mensaje input {
+  border: solid 2px #ced4da;
+  border-radius: 7px;
+  outline: none;
+  padding: 0.375rem 0.75rem;
+  width: 300px;
+  margin: 5px 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+}
+
+#caja-mensaje button {
+  border: none;
+  width: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fa8231;
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+}
+
+#caja-mensaje button:hover {
+  background-color: #fd9644;
+}
+
+#mensajes {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.mensaje {
+  padding: 10px 10px 5px 10px;
+}
+
+#mensajes .mensaje-bot img, #mensajes .mensaje-cliente img {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#mensajes .contenido {
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 15px;
+  vertical-align: top;
+  width: 270px;
+  overflow: hidden;
+}
+
+#mensajes .mensaje-bot .contenido {
+  background-color: #ffc048;
+}
+
+#mensajes .mensaje-bot .flecha-izquierda {
+  display: inline-block;
+  margin-right: -10px;
+  margin-top: 15px;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #ffc048;
+}
+
+#mensajes .mensaje-cliente .contenido {
+  background-color: white;
+}
+
+#mensajes .mensaje-cliente .flecha-derecha{
+  display: inline-block;
+  margin-left: -10px;
+  margin-top: 15px;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid white;
+}
+
+/*PARA EL SCROL*/
+.scroll {
+  overflow: auto;
+  width: 100%;
+  height: 250px;
+  z-index: 101;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.scroll::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}

@@ -20,6 +20,7 @@ import {FormsModule} from '@angular/forms';
 import { SobreNosotrosComponent } from './components/info/sobre-nosotros/sobre-nosotros.component';
 import { DireccionComponent } from './components/info/direccion/direccion.component';
 import { ContactanosComponent } from './components/info/contactanos/contactanos.component';
+import { ChatBasicoComponent } from './components/info/chat-basico/chat-basico.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ContactanosComponent } from './components/info/contactanos/contactanos.
     PropiedadFilterComponent,
     SobreNosotrosComponent,
     DireccionComponent,
-    ContactanosComponent
+    ContactanosComponent,
+    ChatBasicoComponent
   ],
   imports: [
     BrowserModule,
