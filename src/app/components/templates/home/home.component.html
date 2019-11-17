@@ -1,4 +1,4 @@
-<!-- Cabecera -->
+<!-- Cabecera
 <header class="cabecera text-white text-center">
     <div class="overlay"></div>
     <div class="container">
@@ -12,12 +12,15 @@
         </div>
     </div>
 </header>
+ -->
 
+<div class="container">
 
-<div class="container-fluid">
     <div class="row justify-content-center">
 
         <div class="col-12">
+
+
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf="propiedades">
 
@@ -35,11 +38,12 @@
                          *ngFor="let propiedad of propiedades;let i = index;">
 
                         <img [src]="propiedad.urlFotoPrincipal | urlFoto"
-                             class="img-fluid w-100" alt="...">
+                             class="w-100" alt="..." >
 
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption ">
                             <h3 *ngIf="propiedad.tipoPropiedad">{{propiedad.tipoPropiedad.nombre}}</h3>
-                            <button class="btn bg-orange">Ver Mas</button>
+                            <h4>{{propiedad.titulo}}</h4>
+                            <button class="btn btn-sm bg-orange">Ver Mas</button>
                         </div>
 
                     </div>
@@ -59,11 +63,17 @@
 
             </div>
 
+
+
+
+
+
         </div>
 
     </div>
 
 </div>
+
 
 
 

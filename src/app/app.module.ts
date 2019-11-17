@@ -17,53 +17,53 @@ import {ContactoFormComponent} from './components/contacto/contacto-form/contact
 import {UrlFotoPipe} from './pipes/url-foto.pipe';
 import {PropiedadFilterComponent} from './components/propiedad/propiedad-filter/propiedad-filter.component';
 import {FormsModule} from '@angular/forms';
-import { SobreNosotrosComponent } from './components/info/sobre-nosotros/sobre-nosotros.component';
-import { DireccionComponent } from './components/info/direccion/direccion.component';
-import { ContactanosComponent } from './components/info/contactanos/contactanos.component';
-import { ChatBasicoComponent } from './components/info/chat-basico/chat-basico.component';
+import {SobreNosotrosComponent} from './components/info/sobre-nosotros/sobre-nosotros.component';
+import {DireccionComponent} from './components/info/direccion/direccion.component';
+import {ContactanosComponent} from './components/info/contactanos/contactanos.component';
+import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    FootComponent,
-    PropiedadInfoComponent,
-    PropiedadListComponent,
-    HomeComponent,
-    ContactoComponent,
-    ContactoFormComponent,
-    UrlFotoPipe,
-    PropiedadFilterComponent,
-    SobreNosotrosComponent,
-    DireccionComponent,
-    ContactanosComponent,
-    ChatBasicoComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ApolloModule,
-    HttpLinkModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        FootComponent,
+        PropiedadInfoComponent,
+        PropiedadListComponent,
+        HomeComponent,
+        ContactoComponent,
+        ContactoFormComponent,
+        UrlFotoPipe,
+        PropiedadFilterComponent,
+        SobreNosotrosComponent,
+        DireccionComponent,
+        ContactanosComponent,
+        ChatBasicoComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ApolloModule,
+        HttpLinkModule,
+        HttpClientModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 
 
-  constructor(
-    apollo: Apollo,
-    httpLink: HttpLink
-  ) {
-    apollo.create({
-      link: httpLink.create({
-        // uri: 'http://localhost:8000/graphql',
-        uri: 'http://34.70.2.34:8000/graphql'
-      }),
-      cache: new InMemoryCache()
-    });
-  }
+    constructor(
+        apollo: Apollo,
+        httpLink: HttpLink
+    ) {
+        apollo.create({
+            link: httpLink.create({
+                // uri: 'http://localhost:8000/graphql',
+                uri: 'http://34.70.2.34:8000/graphql'
+            }),
+            cache: new InMemoryCache()
+        });
+    }
 
 }

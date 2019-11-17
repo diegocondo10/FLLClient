@@ -1,79 +1,83 @@
 export interface Paginacion {
-  limit?: number;
-  offset?: number;
+    limit?: number;
+    offset?: number;
 }
 
 export interface Persona {
-  id?: number;
-  identificacion?: string;
-  nombre?: string;
-  apellido?: string;
-  celular?: string;
-  telefono?: string;
-  activo?: boolean;
-  propiedadSet?: Propiedad[];
+    id?: number;
+    identificacion?: string;
+    nombre?: string;
+    apellido?: string;
+    celular?: string;
+    telefono?: string;
+    activo?: boolean;
+    propiedadSet?: Propiedad[];
 }
 
 export interface TipoPropiedad {
-  id?: number;
-  nombre?: string;
-  activo?: boolean;
+    id?: number;
+    nombre?: string;
+    activo?: boolean;
 }
 
 export interface Sector {
-  id?: number;
-  nombre?: string;
-  activo?: boolean;
+    id?: number;
+    nombre?: string;
+    activo?: boolean;
 }
 
 
 export interface Propiedad {
-  id?: number;
-  persona?: Persona;
-  tipoPropiedad?: TipoPropiedad;
-  sector?: Sector;
-  codigo?: string;
-  callePrincipal?: string;
-  calleSecundaria?: string;
-  numeroCasa?: string;
-  areaTotal?: number;
-  medidaFrente?: number;
-  medidaAtras?: number;
-  medidaIzquierdo?: number;
-  medidaDerecho?: number;
-  areaConstruccion?: number;
-  precioPromocional?: number;
-  precioFijo?: number;
-  observacion?: string;
-  urlFotoPrincipal?: string;
-  estado?: 'DISPONIBLE' | 'VENDIDO';
-  activo?: boolean;
-  // captadorSet?: [CaptadorType]
-  propiedadfotoSet?: PropiedadFoto[];
-  // ventaSet?: [VentaType]
+    id?: number;
+    persona?: Persona;
+    tipoPropiedad?: TipoPropiedad;
+    sector?: Sector;
+    codigo?: string;
+    callePrincipal?: string;
+    calleSecundaria?: string;
+    numeroCasa?: string;
+    areaTotal?: number;
+    medidaFrente?: number;
+    medidaAtras?: number;
+    medidaIzquierdo?: number;
+    medidaDerecho?: number;
+    areaConstruccion?: number;
+    precioPromocional?: number;
+    precioFijo?: number;
+    observacion?: string;
+    urlFotoPrincipal?: string;
+    estado?: 'Dispobible' | 'Vendido' | 'Reservado' | null;
+    activo?: boolean;
+    propiedadfotoSet?: PropiedadFoto[];
+    prioridad?: number;
+    titulo?: string;
 }
 
 
 export interface PropiedadFoto {
-  id?: number;
-  propiedad?: Propiedad;
-  principal?: boolean;
-  url?: string;
-  activo?: boolean;
+    id?: number;
+    propiedad?: Propiedad;
+    principal?: boolean;
+    url?: string;
+    activo?: boolean;
 }
 
 
 export interface Filtro {
-  minimo?: number;
-  maximo?: number;
-  codigo?: string;
-  lugar?: string;
-  idTipo?: number | 'null';
-  idSector?: number | 'null';
+    minimo?: number;
+    maximo?: number;
+    aguja?: string;
+    idTipo?: number | 'null';
+    idSector?: number | 'null';
+    estado?: 'Disponible' | 'Vendido' | 'Reservado' | null;
+}
+
+export interface Sorters {
+    sorters: ['prioridad' | 'prioridad' | 'fecha_registro' | 'precio' | 'prioridad_desc' | 'precio_desc' | 'fecha_registro_desc'];
 }
 
 
 export interface Fragment {
-  name?: string;
-  content?: string;
+    name?: string;
+    content?: string;
 }

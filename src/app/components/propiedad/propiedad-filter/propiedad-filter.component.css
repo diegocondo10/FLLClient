@@ -1,0 +1,6 @@
+.tipo-propiedad{
+    cursor: pointer;
+}
+.tipo-propiedad:hover{
+    background-color: #b36b2f;
+}

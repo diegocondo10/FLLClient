@@ -17,7 +17,17 @@ export class HomeComponent implements OnInit {
 
     async ngOnInit() {
 
-        this.propiedades = await this.srv.getPropiedades({limit: 4}, null);
+        this.propiedades = await this.srv.getPropiedadesHome(
+            {
+                estado: 'Disponible'
+            },
+            {
+                sorters: ['prioridad_desc']
+            },
+            {
+                limit: 5, offset: 0
+            }
+        );
         console.log(this.propiedades);
     }
 

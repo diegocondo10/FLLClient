@@ -20,8 +20,8 @@ export const FILTROS = gql`
 `;
 
 export const FRAG_PROPIEDADES_HOME: Fragment = {
-  name: 'infoHome',
-  content: `
+    name: 'infoHome',
+    content: `
   fragment infoHome on PropiedadType {
   id
   observacion(limit:90)
@@ -44,7 +44,7 @@ export const FRAG_PROPIEDADES_HOME: Fragment = {
 
 
 export const PROPIEDADES_QUERY = (fragment: Fragment): any => {
-  return gql`
+    return gql`
 query buscarPropiedades($paginacion: Paginacion, $filtros: FiltrosPropiedades) {
   appCore {
     propiedades(paginacion: $paginacion, filtros: $filtros) {
@@ -59,7 +59,6 @@ ${fragment.content}
 
 
 export const GET_PROPIEDAD_BY_ID = gql`
-
 query buscarPropiedad($propiedadId: ID!) {
   appCore {
     propiedad(propiedadId: $propiedadId) {
@@ -86,4 +85,17 @@ query buscarPropiedad($propiedadId: ID!) {
   }
 }
 
+`;
+
+
+export const PROPIEDADES_HOME = gql`
+{
+  appCore {
+    propiedades(sorters: [prioridad_desc]) {
+      id
+      titulo
+      urlFotoPrincipal
+    }
+  }
+}
 `;

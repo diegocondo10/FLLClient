@@ -1,66 +1,80 @@
-<div class="container-fluid bg-bluedark pt-3 pb-2">
-  <form #form="ngForm" class="form-inline w-100">
-
-    <div class="form-row">
-
-      <div class="col-12 col-md-4 mb-2">
-        <input
-          class="form-control form-control-lg w-100"
-          type="text"
-          placeholder="Buscar..."
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-          name="buscarIn"
-          [(ngModel)]="filtro.codigo"
-        >
-      </div>
-
-      <div class="col-6 col-md-4 mb-2">
-        <select class="custom-select custom-select-lg w-100" id="select" name="sectoresSel"
-                [(ngModel)]="filtro.idSector">
-          <option [value]="null">Sectores</option>
-          <option [value]="sector.id" *ngFor="let sector of sectores">{{sector.nombre}}</option>
-        </select>
-      </div>
-
-      <div class="col-6 col-md-4 mb-2">
-        <select class="custom-select custom-select-lg w-100" id="tipoPropiedadSel" name="tipoPropiedadSel"
-                [(ngModel)]="filtro.idTipo">
-          <option [value]="null">Tipos de Propiedad</option>
-          <option [value]="tipo.id" *ngFor="let tipo of tiposPropeidad">{{tipo.nombre}}</option>
-        </select>
-      </div>
-
-      <div class="col-6 col-md-4 mb-2">
-        <input class="form-control form-control-lg w-100"
-               type="number" name="minimoIn"
-               id="minimoIn"
-               placeholder="Precio Minimo"
-               [(ngModel)]="filtro.minimo">
-      </div>
-
-      <div class="col-6 col-md-4 mb-2">
-        <input class="form-control form-control-lg w-100"
-               type="number"
-               name="maximoIn"
-               id="maximoIn"
-               placeholder="Precio Maximo"
-               [(ngModel)]="filtro.maximo">
-      </div>
+<nav class="navbar navbar-expand navbar-light bg-dark">
+    <div class="container">
 
 
-      <div class="col-12 col-md-4 mb-2">
-        <button class="btn btn-block bg-orange h-100"
-                type="button"
-                [disabled]="form.invalid"
-                (click)="buscarPropiedades()">
-          Buscar
-        </button>
-      </div>
+        <ul class="nav nav-justified w-100 flex-column flex-sm-row">
+            <li class="nav-item" *ngFor="let tipo of tiposPropeidad">
+                <a class="nav-link text-white tipo-propiedad" >{{tipo.nombre}}</a>
+            </li>
+        </ul>
+
 
     </div>
+</nav>
 
-  </form>
+
+<div class="container-fluid bg-bluedark pt-3 pb-2">
+    <form #form="ngForm" class="form-inline w-100">
+
+        <div class="form-row">
+
+            <div class="col-12 col-md-4 mb-2">
+                <input
+                        class="form-control form-control-lg w-100"
+                        type="text"
+                        placeholder="Buscar..."
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        name="buscarIn"
+                        [(ngModel)]="filtro.aguja"
+                >
+            </div>
+
+            <div class="col-6 col-md-4 mb-2">
+                <select class="custom-select custom-select-lg w-100" id="select" name="sectoresSel"
+                        [(ngModel)]="filtro.idSector">
+                    <option [value]="null">Sectores</option>
+                    <option [value]="sector.id" *ngFor="let sector of sectores">{{sector.nombre}}</option>
+                </select>
+            </div>
+
+            <div class="col-6 col-md-4 mb-2">
+                <select class="custom-select custom-select-lg w-100" id="tipoPropiedadSel" name="tipoPropiedadSel"
+                        [(ngModel)]="filtro.idTipo">
+                    <option [value]="null">Tipos de Propiedad</option>
+                    <option [value]="tipo.id" *ngFor="let tipo of tiposPropeidad">{{tipo.nombre}}</option>
+                </select>
+            </div>
+
+            <div class="col-6 col-md-4 mb-2">
+                <input class="form-control form-control-lg w-100"
+                       type="number" name="minimoIn"
+                       id="minimoIn"
+                       placeholder="Precio Minimo"
+                       [(ngModel)]="filtro.minimo">
+            </div>
+
+            <div class="col-6 col-md-4 mb-2">
+                <input class="form-control form-control-lg w-100"
+                       type="number"
+                       name="maximoIn"
+                       id="maximoIn"
+                       placeholder="Precio Maximo"
+                       [(ngModel)]="filtro.maximo">
+            </div>
+
+
+            <div class="col-12 col-md-4 mb-2">
+                <button class="btn btn-block bg-orange h-100"
+                        type="button"
+                        [disabled]="form.invalid"
+                        (click)="buscarPropiedades()">
+                    Buscar
+                </button>
+            </div>
+
+        </div>
+
+    </form>
 </div>
 
-<router-outlet></router-outlet>
