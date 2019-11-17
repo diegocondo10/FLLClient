@@ -25,8 +25,9 @@
   </div>
 
   <div id="caja-mensaje">
-    <input type="text" placeholder="Escribir mensaje..." id="txt-mensaje">
-    <button>Enviar</button>
+    <input [(ngModel)]="msgCli" type="text" placeholder="Escribir mensaje..." id="txt-mensaje" 
+    (keydown)="eventoEnterCli($event)">
+    <button (click)="mensajeCliente()">Enviar</button>
   </div>
 
 </div>

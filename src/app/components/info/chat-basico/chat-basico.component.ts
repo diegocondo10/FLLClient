@@ -8,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChatBasicoComponent implements OnInit {
 
   private mostrar: boolean = false;
-  /*private HEADCHAT = document.querySelector('#chat-header');
-  private MENSAJES = document.querySelector('#mensajes');
-  private CAJAMENSAJE = document.querySelector('#caja-mensaje');
-  private TXTMENSAJE = document.querySelector('#txt-mensaje');*/
+  private msgCli = '';
 
   constructor() { }
 
@@ -19,7 +16,6 @@ export class ChatBasicoComponent implements OnInit {
     const HEADCHAT = document.querySelector('#chat-header');
     const MENSAJES = document.querySelector('#mensajes');
     const CAJAMENSAJE = document.querySelector('#caja-mensaje');
-    const TXTMENSAJE = document.querySelector('#txt-mensaje');
 
     HEADCHAT.addEventListener('click', function() {
       if (this.mostrar) {
@@ -36,27 +32,12 @@ export class ChatBasicoComponent implements OnInit {
         this.mostrar = true;
       }
     });
+  }
 
-
-    TXTMENSAJE.addEventListener('keyup', function(e) {
-      let key = e.keyCode || e.witch;
-      if (key == 13) {
-        agregarMensaje();
-      }
-    });
-  
-    function agregarMensaje() {
-      let valor = TXTMENSAJE.value;
-      if (valor.length > 0) {
-          getMsgCliente(valor)
-          TXTMENSAJE.value = '';
-          if (MENSAJES.scrollTop  < MENSAJES.scrollHeight - MENSAJES.clientHeight) {
-            MENSAJES.scrollTop += MENSAJES.clientHeight;
-          }
-      }
-    }
-
-    function getMsgCliente(msg){
+  mensajeCliente() {
+    if (this.msgCli.length > 0) {
+      const MENSAJES = document.querySelector('#mensajes');
+    
       let ctn = document.createElement('div');
       let c = document.createElement('div');
       let f = document.createElement('div');
@@ -68,7 +49,7 @@ export class ChatBasicoComponent implements OnInit {
       c.classList.add('contenido');
   
       c.appendChild(
-        document.createTextNode(msg)
+        document.createTextNode(this.msgCli)
       );
   
       ctn.appendChild(c);
@@ -76,10 +57,19 @@ export class ChatBasicoComponent implements OnInit {
       ctn.appendChild(i);
   
       MENSAJES.appendChild(ctn);
+  
+      if (MENSAJES.scrollTop  < MENSAJES.scrollHeight - MENSAJES.clientHeight) {
+        MENSAJES.scrollTop += MENSAJES.clientHeight;
+      }
+      this.msgCli = '';
     }
-
   }
 
+  eventoEnterCli(event) {
+    if (event.key === "Enter") {
+      this.mensajeCliente();
+    }
+  }
   
 
 }
