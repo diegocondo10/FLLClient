@@ -100,29 +100,39 @@ export class ChatBasicoComponent implements OnInit {
 
   mensajeBot() {
     if (this.msgSinResponder.length > 0) {
-      const MENSAJES = document.querySelector('#mensajes');  
-      let ctn = document.createElement('div');
-      let c = document.createElement('div');
-      let f = document.createElement('div');
-      let i = document.createElement('img');
-      f.classList.add('flecha-izquierda');
-      i.classList.add('foto');
-      i.src = 'https://pbs.twimg.com/profile_images/876845658472316929/9jQcgE7P_reasonably_small.jpg';
-      ctn.classList.add('mensaje-bot', 'mensaje');
-      c.classList.add('contenido');
-
-      c.appendChild(
-        document.createTextNode(this.getRespuesta())
-      );
-      
-      ctn.appendChild(i);
-      ctn.appendChild(f);
-      ctn.appendChild(c);
-
-      MENSAJES.appendChild(ctn);
-      this.scrollCajaMsgDown(MENSAJES);
-      this.msgSinResponder = '';
+      let msg = this.getRespuesta();
+      if (!msg.includes(this.msgBot)) {
+        this.msgBot =+ ';;' + msg;
+        this.enviarMsgBot(msg);
+      } else {
+        this.enviarMsgBot('Si sus preguntas no fueron resultas le invitamos a que nos envie un correo a grupoinmobiliariofll@hotmail.com. Tambien puede llamarnos o escribirnos a los siguientes numeros 2804483, 098475173. De igual manera puede dejarnos sus datos y nosotros nos pondremos en contacto con usted. Un gusto antenderle. Recuerde somos la mejor inmobiliaria de la ciudad de Cuenca - Ecuador.');
+      }
     }
+  }
+
+  private enviarMsgBot(msg: string) {
+    const MENSAJES = document.querySelector('#mensajes');  
+    let ctn = document.createElement('div');
+    let c = document.createElement('div');
+    let f = document.createElement('div');
+    let i = document.createElement('img');
+    f.classList.add('flecha-izquierda');
+    i.classList.add('foto');
+    i.src = 'https://pbs.twimg.com/profile_images/876845658472316929/9jQcgE7P_reasonably_small.jpg';
+    ctn.classList.add('mensaje-bot', 'mensaje');
+    c.classList.add('contenido');
+
+    c.appendChild(
+      document.createTextNode(msg)
+    );
+    
+    ctn.appendChild(i);
+    ctn.appendChild(f);
+    ctn.appendChild(c);
+
+    MENSAJES.appendChild(ctn);
+    this.scrollCajaMsgDown(MENSAJES);
+    this.msgSinResponder = '';
   }
 
   private scrollCajaMsgDown(MENSAJES) {
