@@ -1,10 +1,10 @@
 .equipo {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
   
 .equipo .equipo-item {
-    max-width: 15rem;
+    max-width: 20rem;
 }
   
 .equipo .equipo-item img {

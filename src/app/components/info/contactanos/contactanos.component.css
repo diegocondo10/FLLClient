@@ -1,7 +1,7 @@
 header.cabecera {
     position: relative;
     background-color: #343a40;
-    background: url("https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+    background: url("../../../../assets/fll/equipofll.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 3rem;
