@@ -43,6 +43,7 @@ export class PropiedadFilterComponent implements OnInit {
         }
         this.buscar.emit(this.filtro);
 
+        this.filtro.aguja = '';
     }
 
     navBuscar(id: number) {

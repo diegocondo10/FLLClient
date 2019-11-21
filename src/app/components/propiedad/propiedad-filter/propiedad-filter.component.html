@@ -27,12 +27,15 @@
                         aria-describedby="basic-addon2"
                         name="buscarIn"
                         [(ngModel)]="filtro.aguja"
+                        autofocus
                 >
             </div>
 
             <div class="col-6 col-md-4 mb-2">
                 <select class="custom-select custom-select-lg w-100" id="select" name="sectoresSel"
-                        [(ngModel)]="filtro.idSector">
+                        [(ngModel)]="filtro.idSector"
+                        (change)="buscarPropiedades()"
+                >
                     <option [value]="null">Sectores</option>
                     <option [value]="sector.id" *ngFor="let sector of sectores">{{sector.nombre}}</option>
                 </select>
@@ -40,7 +43,9 @@
 
             <div class="col-6 col-md-4 mb-2">
                 <select class="custom-select custom-select-lg w-100" id="tipoPropiedadSel" name="tipoPropiedadSel"
-                        [(ngModel)]="filtro.idTipo">
+                        [(ngModel)]="filtro.idTipo"
+                        (change)="buscarPropiedades()"
+                >
                     <option [value]="null">Tipos de Propiedad</option>
                     <option [value]="tipo.id" *ngFor="let tipo of tiposPropeidad">{{tipo.nombre}}</option>
                 </select>
