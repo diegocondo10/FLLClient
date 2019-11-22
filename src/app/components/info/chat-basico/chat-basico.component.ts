@@ -25,7 +25,7 @@ export class ChatBasicoComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.mensajesBoot = await this.srv.getMensajesBoot();
+        
     }
 
     public togleChat() {
