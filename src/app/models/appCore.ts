@@ -103,3 +103,8 @@ export interface MensajeBot {
     visto?: boolean;
     elim?: boolean;
 }
+
+export interface MensajeInput {
+    ip?: string;
+    mensaje?: string;
+}

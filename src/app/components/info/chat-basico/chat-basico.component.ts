@@ -25,7 +25,12 @@ export class ChatBasicoComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.mensajesBoot = await this.srv.getMensajesBoot();
+        /*
+        await this.srv.enviarMensaje({
+            ip: '35.192.7.222',
+            mensaje: 'prueba'
+        });
+        */
     }
 
     public togleChat() {
