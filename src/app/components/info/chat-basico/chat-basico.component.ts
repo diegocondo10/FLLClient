@@ -15,6 +15,7 @@ export class ChatBasicoComponent implements OnInit {
     public msgCli = '';
     public msgSinResponder = '';
     public msgBot = '';
+    public ip = 'SI';
 
     constructor(
         private srv: BootService
@@ -22,6 +23,15 @@ export class ChatBasicoComponent implements OnInit {
         setTimeout(() => {
             this.iniciarChat();
         }, 20000);
+        this.srv.getIpAddress().subscribe(
+            res => {
+                this.ip = res.ip;
+            },
+            err => {
+            console.log('No obtuvimos categorias');
+            console.log(err);
+            }
+        );
     }
 
     async ngOnInit() {
@@ -100,6 +110,13 @@ export class ChatBasicoComponent implements OnInit {
         }
     }
 
+    async enviarMensaje(msg) {
+        await this.srv.enviarMensaje({
+            ip: this.ip,
+            mensaje: msg
+        });
+    }
+
     eventoEnterCli(event) {
         if (event.key === 'Enter') {
             this.mensajeCliente();
@@ -143,6 +160,8 @@ export class ChatBasicoComponent implements OnInit {
 
         MENSAJES.appendChild(ctn);
         this.scrollCajaMsgDown(MENSAJES);
+        
+        this.enviarMensaje(this.msgSinResponder);
         this.msgSinResponder = '';
     }
 

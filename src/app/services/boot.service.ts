@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
-import {MensajeBot} from '../models/appCore';
-
+import {MensajeBot, MensajeInput} from '../models/appCore';
+import { HttpClient } from '@angular/common/http';
 
 const MENSAJES_BOOT = gql`
 {
@@ -17,6 +17,18 @@ const MENSAJES_BOOT = gql`
 }
 `;
 
+const ENVIAR_MENSAJE = gql`
+mutation enviarMensaje($input: MensajeBootInput) {
+  appCore {
+    mensajeBoot(input: $input) {
+      mensaje {
+        id
+        cliente
+      }
+    }
+  }
+}
+`;
 
 @Injectable({
     providedIn: 'root'
@@ -24,8 +36,13 @@ const MENSAJES_BOOT = gql`
 export class BootService {
 
     constructor(
-        private apollo: Apollo
+        private apollo: Apollo,
+        private http: HttpClient
     ) {
+    }
+
+    getIpAddress() {
+      return this.http.get<any>('https://api.ipify.org/?format=json');
     }
 
     async getMensajesBoot(): Promise<MensajeBot[]> {
@@ -36,5 +53,18 @@ export class BootService {
 
         const promise = await query.toPromise();
         return promise['appCore']['mensajesBoot'];
+    }
+
+    async enviarMensaje(input: MensajeInput) {
+        const mutation = this.apollo.mutate({
+            mutation: ENVIAR_MENSAJE,
+            variables: {
+                input: input
+            }
+        });
+
+        const promise = await mutation.toPromise();
+        return promise['appCore']['mensajeBoot'];
+
     }
 }
