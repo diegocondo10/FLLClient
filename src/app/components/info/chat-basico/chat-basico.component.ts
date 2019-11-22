@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {MensajeBot} from '../../../models/appCore';
+import {BootService} from '../../../services/boot.service';
 
 @Component({
     selector: 'app-chat-basico',
@@ -7,18 +9,23 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ChatBasicoComponent implements OnInit {
 
+    public mensajesBoot: MensajeBot[] = [];
+
     public mostrar: boolean = false;
     public msgCli = '';
     public msgSinResponder = '';
     public msgBot = '';
 
-    constructor() {
+    constructor(
+        private srv: BootService
+    ) {
         setTimeout(() => {
             this.iniciarChat();
         }, 20000);
     }
 
-    ngOnInit() {
+    async ngOnInit() {
+        this.mensajesBoot = await this.srv.getMensajesBoot();
     }
 
     public togleChat() {
@@ -88,8 +95,8 @@ export class ChatBasicoComponent implements OnInit {
             this.msgCli = '';
             // Para que nuestro bot responda 
             setTimeout(() => {
-              this.mensajeBot();
-          }, 4000);
+                this.mensajeBot();
+            }, 4000);
         }
     }
 
@@ -235,15 +242,15 @@ export class ChatBasicoComponent implements OnInit {
     ];
 
     private BIENVENIDA = [
-      'Hola. Bienvenid@ :) ¿En qué te podemos ayudar?',
-      'Hey, hola. Un gusto en atenderte :) ¿Te interesa alguna propiedad?',
-      'Hola. Si te interesa alguna propiedad, aqui te ayudamos a conseguirla :)',
-      'Hola, sabemos que necesitas un descanso y una de nuestras Quintas es ideal para ti :) Dinos que deseas saber',
-      'Hey, hola. Gracias por visitarnos :) Puedes preguntar lo que desees aquí..',
-      'Hola ^-^ Mucho gusto. ¿En que te podemos ayudar?',
-      'Hey, hola.. llegas a tiempo, tenemos asesoramiento gratis!! Pregunta aquí..',
-      'Bienvenid@! ^-^ Gracias por visitarnos, Escribe tus dudas aqui..',
-      'Hola ^-^ Te gustaria conocer nuestras hermosas Quintas :)  Déjanos tus dudas aquí..'
+        'Hola. Bienvenid@ :) ¿En qué te podemos ayudar?',
+        'Hey, hola. Un gusto en atenderte :) ¿Te interesa alguna propiedad?',
+        'Hola. Si te interesa alguna propiedad, aqui te ayudamos a conseguirla :)',
+        'Hola, sabemos que necesitas un descanso y una de nuestras Quintas es ideal para ti :) Dinos que deseas saber',
+        'Hey, hola. Gracias por visitarnos :) Puedes preguntar lo que desees aquí..',
+        'Hola ^-^ Mucho gusto. ¿En que te podemos ayudar?',
+        'Hey, hola.. llegas a tiempo, tenemos asesoramiento gratis!! Pregunta aquí..',
+        'Bienvenid@! ^-^ Gracias por visitarnos, Escribe tus dudas aqui..',
+        'Hola ^-^ Te gustaria conocer nuestras hermosas Quintas :)  Déjanos tus dudas aquí..'
     ];
 
     private getRandomNumber() {
