@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Interesado} from '../../../models/appCore';
 
 @Component({
-  selector: 'app-contacto-form',
-  templateUrl: './contacto-form.component.html',
-  styleUrls: ['./contacto-form.component.css']
+    selector: 'app-contacto-form',
+    templateUrl: './contacto-form.component.html',
+    styleUrls: ['./contacto-form.component.css']
 })
 export class ContactoFormComponent implements OnInit {
 
-  constructor() { }
+    public interesado: Interesado = {};
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

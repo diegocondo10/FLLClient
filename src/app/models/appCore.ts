@@ -81,3 +81,25 @@ export interface Fragment {
     name?: string;
     content?: string;
 }
+
+export interface Interesado {
+    id?: number;
+    propiedad?: Propiedad;
+    nombre?: string;
+    correo?: string;
+    telefono?: string;
+    mensaje?: string;
+    fecha_ingreso?: Date;
+    elim?: boolean;
+
+}
+
+export interface MensajeBot {
+    id?: number;
+    cliente?: string;
+    fecha_ingreso?: Date;
+    mensaje?: string;
+    importante?: boolean;
+    visto?: boolean;
+    elim?: boolean;
+}
