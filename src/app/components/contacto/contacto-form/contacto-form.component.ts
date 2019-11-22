@@ -16,4 +16,7 @@ export class ContactoFormComponent implements OnInit {
     ngOnInit() {
     }
 
+    enviar() {
+        console.log(this.interesado);
+    }
 }
