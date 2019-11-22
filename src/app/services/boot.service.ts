@@ -64,7 +64,7 @@ export class BootService {
         });
 
         const promise = await mutation.toPromise();
-        return promise['appCore']['mensajeBoot'];
+        return promise;
 
     }
 }

@@ -49,9 +49,13 @@ export class ChatBasicoComponent implements OnInit {
     private iniciarChat() {
         if (this.msgSinResponder.length == 0) {
             this.mostrarChat();
-            this.msgSinResponder = 'HOLA';
-            this.msgBot = this.getMensajeBienvenida();
-            this.enviarMsgBot(this.msgBot);
+            if (this.msgSinResponder.length == 0
+                && this.msgBot.length == 0) {
+                this.msgSinResponder = 'HOLA';
+                this.msgBot = this.getMensajeBienvenida();
+                this.enviarMsgBot(this.msgBot);
+            }
+            
         }
     }
 
