@@ -4,8 +4,26 @@ header.cabecera {
     background-color: #343a40;
     background: url("https://images.pexels.com/photos/2079434/pexels-photo-2079434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
     background-size: cover;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-right: solid 3rem #FFD656;
+}
+
+header h1 {
+    font-weight: 900;
+}
+
+.borde-orange {
+    border-bottom: solid 12px #FFD656 !important;
+    width: 60%;
+}
+
+.color-orange {
+    color: #FFD656 !important;
+}
+
+.color-blanco {
+    color: #FFF !important;
 }
   
 header.cabecera .overlay {
@@ -24,8 +42,8 @@ header.cabecera h1 {
   
 @media (min-width: 768px) {
     header.cabecera {
-        padding-top: 12rem;
-        padding-bottom: 12rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     header.cabecera h1 {
         font-size: 3rem;  
