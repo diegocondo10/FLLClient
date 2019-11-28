@@ -1,84 +1,86 @@
 <app-propiedad-filter (buscar)="buscar($event)"></app-propiedad-filter>
 <section class="propiedad" *ngIf="propiedad">
-  <div class="container-fluid p-0">
+    <div class="container-fluid p-0">
 
-    <div class="row no-gutters">
+        <div class="row no-gutters">
 
-      <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
+            <div class="col-lg-6 order-lg-1 my-auto propiedad-text">
 
-        <h2>{{propiedad.tipoPropiedad.nombre}} - Ubicado</h2>
+                <h2>{{propiedad.tipoPropiedad.nombre}} - Ubicado</h2>
 
-        <h3 class="propiedad-precio">$ {{propiedad.precioPromocional}}</h3>
+                <h3 class="propiedad-precio">$ {{propiedad.precioPromocional}}</h3>
 
-        <div class="my-2">
-          <button type="button" class="btn bg-orange">
-            Me interesa
-          </button>
-        </div>
+                <div class="my-2">
+                    <button type="button" class="btn bg-orange" (click)="meInteresa()">
+                        Me interesa
+                    </button>
+                </div>
 
-        <p class="lead mb-0">Dirrecion: {{propiedad.callePrincipal}} y {{propiedad.calleSecundaria}}</p>
-        <p class="lead mb-0">Area total: {{propiedad.areaTotal}} mt2</p>
-        <p class="lead mb-0">Area construnccion: {{propiedad.areaConstruccion}} mt2</p>
+                <p class="lead mb-0">Dirrecion: {{propiedad.callePrincipal}} y {{propiedad.calleSecundaria}}</p>
+                <p class="lead mb-0">Area total: {{propiedad.areaTotal}} mt2</p>
+                <p class="lead mb-0">Area construnccion: {{propiedad.areaConstruccion}} mt2</p>
 
-      </div>
-
-
-      <div class="col-lg-6 order-lg-2 propiedad-img">
-
-
-        <div id="carouselExampleIndicators" class="carousel slide"
-             *ngIf="propiedad.propiedadfotoSet.length >0; else sinImagen"
-             data-ride="carousel">
-
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" [ngClass]="{'active':i==0}"
-                *ngFor="let f of propiedad.propiedadfotoSet; let i = index;"></li>
-          </ol>
-          <div class="carousel-inner">
-
-            <div class="carousel-item"
-                 [ngClass]="{'active': i==0 }"
-                 *ngFor="let foto of propiedad.propiedadfotoSet;let i = index;">
-              <img
-                [src]="foto.url | urlFoto"
-                class="d-block w-100 propiedad-img" alt="...">
             </div>
 
-          </div>
+
+            <div class="col-lg-6 order-lg-2 propiedad-img">
 
 
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
+                <div id="carouselExampleIndicators" class="carousel slide"
+                     *ngIf="propiedad.propiedadfotoSet.length >0; else sinImagen"
+                     data-ride="carousel">
 
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" [ngClass]="{'active':i==0}"
+                            *ngFor="let f of propiedad.propiedadfotoSet; let i = index;"></li>
+                    </ol>
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item"
+                             [ngClass]="{'active': i==0 }"
+                             *ngFor="let foto of propiedad.propiedadfotoSet;let i = index;">
+                            <img
+                                    [src]="foto.url | urlFoto"
+                                    class="d-block w-100 propiedad-img" alt="...">
+                        </div>
+
+                    </div>
+
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+
+
+                </div>
+
+
+                <ng-template #sinImagen>
+                    <img class="img-fluid" [src]="propiedad.urlFotoPrincipal|urlFoto" alt="">
+                </ng-template>
+
+
+            </div>
+
+
+            <div class="col-12 col-lg-5 order-3 propiedad-info">
+                <p class="lead text-justify" [innerHTML]="textoHtml(propiedad.observacion)"></p>
+            </div>
+
+            <div class="col-12 col-lg-7 order-4" *ngIf="propiedad.urlVideo">
+                <iframe class="mx-auto w-100" height="375" [src]="propiedad.urlVideo"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
 
         </div>
 
-
-        <ng-template #sinImagen>
-          <img class="img-fluid" [src]="propiedad.urlFotoPrincipal|urlFoto" alt="">
-        </ng-template>
-
-
-      </div>
-
-
-      <div class="col-12 col-lg-5 order-3 propiedad-info">
-        <p class="lead text-justify"  [innerHTML]="textoHtml(propiedad.observacion)" ></p>
-      </div>
-
-      <div class="col-12 col-lg-7 order-4">
-        <iframe class="mx-auto w-100" height="375" src="https://www.youtube.com/embed/rzsIToKA0o8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
     </div>
-
-  </div>
 
 
 </section>

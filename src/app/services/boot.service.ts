@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
 import {MensajeBot, MensajeInput} from '../models/appCore';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 const MENSAJES_BOOT = gql`
 {
@@ -42,7 +42,7 @@ export class BootService {
     }
 
     getIpAddress() {
-      return this.http.get<any>('https://api.ipify.org/?format=json');
+        return this.http.get<any>('https://api.ipify.org/?format=json');
     }
 
     async getMensajesBoot(): Promise<MensajeBot[]> {
@@ -63,8 +63,7 @@ export class BootService {
             }
         });
 
-        const promise = await mutation.toPromise();
-        return promise;
+        return await mutation.toPromise();
 
     }
 }

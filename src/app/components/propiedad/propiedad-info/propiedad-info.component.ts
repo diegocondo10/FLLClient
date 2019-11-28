@@ -50,4 +50,12 @@ export class PropiedadInfoComponent implements OnInit {
         return newTexto;
     }
 
+    meInteresa() {
+        this.router.navigate(['contactanos'], {
+            queryParams: {
+                propiedad: this.propiedad.id
+            }
+        });
+    }
+
 }

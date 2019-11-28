@@ -51,6 +51,8 @@ export interface Propiedad {
     propiedadfotoSet?: PropiedadFoto[];
     prioridad?: number;
     titulo?: string;
+    urlVideo?: string;
+    provincia?: string;
 }
 
 
@@ -73,7 +75,7 @@ export interface Filtro {
 }
 
 export interface Sorters {
-    sorters: ['prioridad' | 'prioridad' | 'fecha_registro' | 'precio' | 'prioridad_desc' | 'precio_desc' | 'fecha_registro_desc'];
+    sorters: ['prioridad' | 'fecha_registro' | 'precio' | 'prioridad_desc' | 'precio_desc' | 'fecha_registro_desc'];
 }
 
 
@@ -84,12 +86,12 @@ export interface Fragment {
 
 export interface Interesado {
     id?: number;
-    propiedad?: Propiedad;
+    propiedadId?: Propiedad;
     nombre?: string;
     correo?: string;
     telefono?: string;
     mensaje?: string;
-    fecha_ingreso?: Date;
+    fechaIngreso?: Date;
     elim?: boolean;
 
 }

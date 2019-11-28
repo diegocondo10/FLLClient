@@ -29,8 +29,8 @@ export class PropiedadListComponent implements OnInit {
 
 
     async buscarPropiedades($event) {
-        this.propiedades = await this.srv.getPropiedades({limit: 10}, $event);
-        this.router.navigate(['buscar']);
+        this.propiedades = await this.srv.getPropiedades({limit: 20}, $event);
+        await this.router.navigate(['buscar']);
     }
 
     propiedadInfo(id: number) {

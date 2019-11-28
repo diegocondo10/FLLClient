@@ -1,7 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Apollo} from 'apollo-angular';
-import {FILTROS, FRAG_PROPIEDADES_HOME, GET_PROPIEDAD_BY_ID, PROPIEDADES_HOME, PROPIEDADES_QUERY} from './queries';
-import {Filtro, Paginacion, Propiedad, Sorters} from '../models/appCore';
+import {
+    AGREGAR_INTERESADO,
+    FILTROS,
+    FRAG_PROPIEDADES_HOME,
+    GET_PROPIEDAD_BY_ID, PROPIEDADES_HOME, PROPIEDADES_QUERY
+} from './queries.graphql';
+import {Filtro, Interesado, Paginacion, Propiedad, Sorters} from '../models/appCore';
 
 
 @Injectable({
@@ -64,6 +69,18 @@ export class PropiedadesService {
         });
         const promise = await query.toPromise();
         return promise.data['appCore']['filtros'];
+    }
+
+
+    public async agregarInteresado(input: Interesado) {
+        const mutation = this.apollo.mutate({
+            mutation: AGREGAR_INTERESADO,
+            variables: {
+                input: input
+            }
+        });
+
+        return await mutation.toPromise();
     }
 
 

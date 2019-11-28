@@ -70,6 +70,8 @@ query buscarPropiedad($propiedadId: ID!) {
       areaTotal
       areaConstruccion
       urlFotoPrincipal
+      urlVideo
+      provincia
       tipoPropiedad {
         id
         nombre
@@ -99,3 +101,19 @@ export const PROPIEDADES_HOME = gql`
   }
 }
 `;
+
+
+export const AGREGAR_INTERESADO = gql`
+mutation agregarInteresado($input: InteresadoInput) {
+  appCore {
+    interesado(input: $input) {
+      interesado {
+        id
+        nombre
+      }
+    }
+  }
+}
+`;
+
+
