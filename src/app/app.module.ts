@@ -21,6 +21,7 @@ import {SobreNosotrosComponent} from './components/info/sobre-nosotros/sobre-nos
 import {DireccionComponent} from './components/info/direccion/direccion.component';
 import {ContactanosComponent} from './components/info/contactanos/contactanos.component';
 import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.component';
+import { BannerOfertaComponent } from './components/info/banner-oferta/banner-oferta.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.com
         SobreNosotrosComponent,
         DireccionComponent,
         ContactanosComponent,
-        ChatBasicoComponent
+        ChatBasicoComponent,
+        BannerOfertaComponent
     ],
     imports: [
         BrowserModule,
