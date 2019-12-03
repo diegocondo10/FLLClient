@@ -28,6 +28,7 @@ export class PropiedadInfoComponent implements OnInit {
     async ngOnInit() {
         const id = this.route.snapshot.params['id'];
         this.propiedad = await this.srv.getPropiedadById(id);
+
     }
 
     buscar($event) {
@@ -56,6 +57,11 @@ export class PropiedadInfoComponent implements OnInit {
                 propiedad: this.propiedad.id
             }
         });
+    }
+
+    getVideo() {
+        console.log(this.sanitizer.bypassSecurityTrustUrl(this.propiedad.urlVideo))
+        return this.sanitizer.bypassSecurityTrustUrl(this.propiedad.urlVideo);
     }
 
 }

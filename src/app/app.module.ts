@@ -22,6 +22,7 @@ import {DireccionComponent} from './components/info/direccion/direccion.componen
 import {ContactanosComponent} from './components/info/contactanos/contactanos.component';
 import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.component';
 import { BannerOfertaComponent } from './components/info/banner-oferta/banner-oferta.component';
+import { VideoYoutubePipe } from './pipes/video-youtube.pipe';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import { BannerOfertaComponent } from './components/info/banner-oferta/banner-of
         DireccionComponent,
         ContactanosComponent,
         ChatBasicoComponent,
-        BannerOfertaComponent
+        BannerOfertaComponent,
+        VideoYoutubePipe
     ],
     imports: [
         BrowserModule,

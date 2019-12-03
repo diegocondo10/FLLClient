@@ -27,8 +27,7 @@ export const FRAG_PROPIEDADES_HOME: Fragment = {
   observacion(limit:90)
   urlFotoPrincipal
   precioPromocional
-  callePrincipal
-  calleSecundaria
+  titulo
   sector {
     id
     nombre
@@ -63,7 +62,7 @@ query buscarPropiedad($propiedadId: ID!) {
   appCore {
     propiedad(propiedadId: $propiedadId) {
       id
-      observacion
+      observacion(limit:-1)
       precioPromocional
       callePrincipal
       calleSecundaria
@@ -72,6 +71,7 @@ query buscarPropiedad($propiedadId: ID!) {
       urlFotoPrincipal
       urlVideo
       provincia
+      titulo
       tipoPropiedad {
         id
         nombre

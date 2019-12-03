@@ -86,40 +86,42 @@
 
 <div class="container-fluid my-5">
 
-  <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
 
-    <div class="col-sm-6 col-lg-4 mb-3" *ngFor="let propiedad of propiedades">
+        <div class="col-sm-6 col-lg-4 mb-3" *ngFor="let propiedad of propiedades">
 
-      <div class="card box-shadow" style="height: 380px; width: 100%">
-        <div class="card-header" (click)="propiedadInfo(propiedad.id)">
-          <img style="height: 220px; width: 100%" src="{{propiedad.urlFotoPrincipal |urlFoto}}" alt="">
+            <div class="card box-shadow" style="height: 380px; width: 100%">
+                <div class="card-header" (click)="propiedadInfo(propiedad.id)">
+                    <img style="height: 220px; width: 100%" src="{{propiedad.urlFotoPrincipal |urlFoto}}" alt="">
+                </div>
+
+                <div class="card-body">
+                    <h6 class="propiedad-precio">${{propiedad.precioPromocional}}</h6>
+                    <h6>
+                        {{propiedad.callePrincipal}}
+                        <span *ngIf="propiedad.calleSecundaria">y</span>
+                        {{propiedad.calleSecundaria}}
+                    </h6>
+                    <h6 *ngIf="propiedad.titulo; else sinTitulo">
+                        {{propiedad.titulo}}
+                    </h6>
+                    <ng-template #sinTitulo>
+                        <h6>
+                            Sin Descripcion
+                        </h6>
+                    </ng-template>
+                </div>
+                <!--CARD-BODY-->
+
+            </div>
+            <!--CARD-->
+
+
         </div>
-
-        <div class="card-body">
-          <h6 class="propiedad-precio">${{propiedad.precioPromocional}}</h6>
-          <h6>
-            {{propiedad.callePrincipal}}
-            <span *ngIf="propiedad.calleSecundaria">y</span>
-            {{propiedad.calleSecundaria}}
-          </h6>
-          <h6>
-            SECTOR: {{propiedad.sector.nombre}}
-          </h6>
-          <h6>
-            AREA TOTAL: {{propiedad.areaTotal}}
-          </h6>
-        </div>
-        <!--CARD-BODY-->
-
-      </div>
-      <!--CARD-->
-
+        <!--COL-->
 
     </div>
-    <!--COL-->
-
-  </div>
-  <!--ROW-->
+    <!--ROW-->
 
 </div>
