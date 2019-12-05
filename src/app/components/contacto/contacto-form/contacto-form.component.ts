@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Interesado} from '../../../models/appCore';
+import {Interesado, Propiedad} from '../../../models/appCore';
 import {PropiedadesService} from '../../../services/propiedades.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -11,20 +11,31 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ContactoFormComponent implements OnInit {
 
     public interesado: Interesado = {};
+    public propiedad: Propiedad;
 
     constructor(
         private srv: PropiedadesService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
     ) {
     }
 
-    ngOnInit() {
+    async ngOnInit() {
         this.interesado.propiedadId = this.route.snapshot.queryParams['propiedad'];
+        if (this.interesado.propiedadId) {
+            this.propiedad = await this.srv.getPropiedadById(this.interesado.propiedadId);
+        }
+
+
     }
 
     async enviar() {
         await this.srv.agregarInteresado(this.interesado);
-        await this.router.navigate(['']);
+        if (this.propiedad) {
+            await this.router.navigate(['propiedad', this.propiedad.id]);
+            alert('SE HA ENVIADOR SU COMENTARIO');
+        } else {
+            await this.router.navigate(['']);
+        }
     }
 }

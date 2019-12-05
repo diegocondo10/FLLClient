@@ -23,6 +23,7 @@ import {ContactanosComponent} from './components/info/contactanos/contactanos.co
 import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.component';
 import { BannerOfertaComponent } from './components/info/banner-oferta/banner-oferta.component';
 import { VideoYoutubePipe } from './pipes/video-youtube.pipe';
+import { TextoHtmlPipe } from './pipes/texto-html.pipe';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { VideoYoutubePipe } from './pipes/video-youtube.pipe';
         ContactanosComponent,
         ChatBasicoComponent,
         BannerOfertaComponent,
-        VideoYoutubePipe
+        VideoYoutubePipe,
+        TextoHtmlPipe
     ],
     imports: [
         BrowserModule,

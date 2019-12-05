@@ -86,7 +86,7 @@ export interface Fragment {
 
 export interface Interesado {
     id?: number;
-    propiedadId?: Propiedad;
+    propiedadId?: number;
     nombre?: string;
     correo?: string;
     telefono?: string;

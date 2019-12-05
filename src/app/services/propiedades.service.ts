@@ -59,7 +59,6 @@ export class PropiedadesService {
 
         const promise = await query.toPromise();
         return promise.data['appCore']['propiedad'];
-
     }
 
 
@@ -83,5 +82,17 @@ export class PropiedadesService {
         return await mutation.toPromise();
     }
 
+
+    public textoHtml(texto: string) {
+        let newTexto = '';
+        for (let i = 0; i < texto.length; i++) {
+            if (texto.charCodeAt(i) === 10) {
+                newTexto += '<br>';
+            } else {
+                newTexto += texto.charAt(i);
+            }
+        }
+        return newTexto;
+    }
 
 }
