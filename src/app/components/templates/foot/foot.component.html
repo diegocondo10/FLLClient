@@ -1,37 +1,39 @@
 <footer id="main-foot" class="footer bg-orange ">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
+        <div class="row">
+            <div class="col-lg-8 h-100 text-center text-lg-left my-auto">
+                <ul class="list-inline mb-2">
 
-            <li class="list-inline-item">
-              <a  [routerLink]="['nosotros']">Sobre nosotros</a>
-            </li>
-            <li class="list-inline-item"><span class="separador-foot">~</span></li>
-            <li class="list-inline-item">
-              <a  [routerLink]="['direccion']" >Ubicacion</a>
-            </li>
+                    <li class="list-inline-item">
+                        <a [routerLink]="['nosotros']">Sobre nosotros</a>
+                    </li>
+                    <li class="list-inline-item"><span class="separador-foot">~</span></li>
+                    <li class="list-inline-item">
+                        <a [routerLink]="['direccion']">Ubicacion</a>
+                    </li>
 
-          </ul>
-          <p class="text-color mb-4 mb-lg-0">&copy; Grupo Inmobiliario FLL 2019. <br> Todos los derechos reservados.</p>
+                </ul>
+                <p class="text-color mb-4 mb-lg-0">&copy; Grupo Inmobiliario FLL 2019. <br> Todos los derechos
+                    reservados.</p>
+            </div>
+
+            <div class="col-lg-4 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.facebook.com/people/Flora-Grupo-Fll/100010468062385" target="_blank">
+                            <img src="./assets/facebook.png" alt="">
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://api.whatsapp.com/send?phone=593996503200" target="_blank">
+                            <img src="./assets/whatsapp.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="col-lg-4 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="https://www.facebook.com/people/Flora-Grupo-Fll/100010468062385" target="_blank">
-                <img src="./assets/facebook.png" alt="">
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://api.whatsapp.com/send?phone=593996503200" target="_blank">
-                <img src="./assets/whatsapp.png" alt="">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
+    <img class="fab" src="./assets/upArrow.png"  (click)="goUp($event)">
 </footer>
 
 
