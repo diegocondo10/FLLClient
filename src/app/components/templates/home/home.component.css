@@ -54,8 +54,8 @@ header.cabecera h1 {
 
 
 .nosotros-icons {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
   
 .nosotros-icons .nosotros-icons-item {
@@ -63,13 +63,13 @@ header.cabecera h1 {
 }
   
 .nosotros-icons .nosotros-icons-item .nosotros-icons-icon {
-    height: 7rem;
+    height: 8rem;
 }
   
 .nosotros-icons .nosotros-icons-item .nosotros-icons-icon i {
-    font-size: 4.5rem;
+    font-size: 6.5rem;
 }
   
 .nosotros-icons .nosotros-icons-item:hover .nosotros-icons-icon i {
-    font-size: 5rem;
+    font-size: 7rem;
 }
