@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-direccion',
-  templateUrl: './direccion.component.html',
-  styleUrls: ['./direccion.component.css']
+    selector: 'app-direccion',
+    templateUrl: './direccion.component.html',
+    styleUrls: ['./direccion.component.css']
 })
 export class DireccionComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        window.scrollTo(0, 0);
+    }
 
 }

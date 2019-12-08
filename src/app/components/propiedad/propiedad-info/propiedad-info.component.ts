@@ -26,6 +26,7 @@ export class PropiedadInfoComponent implements OnInit {
     }
 
     async ngOnInit() {
+        window.scrollTo(0, 0);
         const id = this.route.snapshot.params['id'];
         this.propiedad = await this.srv.getPropiedadById(id);
 
