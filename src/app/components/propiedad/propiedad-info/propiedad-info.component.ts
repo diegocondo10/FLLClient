@@ -59,9 +59,4 @@ export class PropiedadInfoComponent implements OnInit {
         });
     }
 
-    getVideo() {
-        console.log(this.sanitizer.bypassSecurityTrustUrl(this.propiedad.urlVideo))
-        return this.sanitizer.bypassSecurityTrustUrl(this.propiedad.urlVideo);
-    }
-
 }

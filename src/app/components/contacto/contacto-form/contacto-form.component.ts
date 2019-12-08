@@ -21,10 +21,14 @@ export class ContactoFormComponent implements OnInit {
     }
 
     async ngOnInit() {
+        window.scrollTo(0, 0);
         this.interesado.propiedadId = this.route.snapshot.queryParams['propiedad'];
         if (this.interesado.propiedadId) {
             this.propiedad = await this.srv.getPropiedadById(this.interesado.propiedadId);
         }
+
+        this.interesado.correo = this.route.snapshot.queryParams['correo'] || '';
+        console.log(this.interesado.correo);
 
 
     }

@@ -1,42 +1,47 @@
 <section class="contacto text-white text-center">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
+        <div class="row">
 
-        <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
 
-        <div class="col-lg-8">
+            <div class="col-lg-8">
 
-          <div class="row">
-            <div class="col-xl-9 mx-auto">
-              <h2 class="mb-4">Quiere recibir nuevas ofertas en su correo?</h2>
-            </div>
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <h2 class="mb-4">Quiere recibir nuevas ofertas en su correo?</h2>
+                    </div>
 
 
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-              <form>
-                <div class="form-row">
-                  <div class="col-12">
-                    <input type="email" class="form-control form-control-lg" placeholder="Ingrese su correo aqui...">
-                  </div>
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <input type="email" class="form-control form-control-lg"
+                                           placeholder="Ingrese su correo aqui..."
+                                           #correo
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="form-row mt-2">
+                                <div class="col-12 col-md-6">
+                                    <button type="submit" class="btn btn-block btn-lg bg-orange"
+                                            (click)="btnSuscribirme(correo)">Suscribirme
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
 
                 </div>
 
-                <div class="form-row mt-2">
-                  <div class="col-12 col-md-6">
-                    <button type="submit" class="btn btn-block btn-lg bg-orange">Suscribirme</button>
-                  </div>
-                </div>
-              </form>
             </div>
 
-
-          </div>
 
         </div>
-
-
-      </div>
     </div>
 </section>
 
