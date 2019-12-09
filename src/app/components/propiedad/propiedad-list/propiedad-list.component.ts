@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PropiedadListComponent implements OnInit {
 
     @Input()
-    paginacion: Paginacion = {limit: 10};
+    paginacion: Paginacion = {limit: 50};
 
     propiedades: Propiedad[];
 
@@ -29,7 +29,7 @@ export class PropiedadListComponent implements OnInit {
 
 
     async buscarPropiedades($event) {
-        this.propiedades = await this.srv.getPropiedades({limit: 20}, $event);
+        this.propiedades = await this.srv.getPropiedades({limit: 50}, $event);
         await this.router.navigate(['buscar']);
     }
 
