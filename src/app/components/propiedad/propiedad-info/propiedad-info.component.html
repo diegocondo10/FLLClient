@@ -49,8 +49,8 @@
                 </ng-template>
 
 
-                <div class="bg-bluedark mt-5" *ngIf="propiedad.urlVideo">
-                    <iframe class="mx-auto w-100" height="375" [src]="propiedad.urlVideo|videoYoutube"
+                <div class="bg-bluedark mt-5 embed-responsive embed-responsive-16by9" *ngIf="propiedad.urlVideo">
+                    <iframe class="embed-responsive-item" [src]="propiedad.urlVideo|videoYoutube"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
