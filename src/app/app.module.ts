@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {ApolloModule, Apollo} from 'apollo-angular';
+import {Apollo, ApolloModule} from 'apollo-angular';
 import {HttpClientModule} from '@angular/common/http';
 import {InMemoryCache} from 'apollo-cache-inmemory';
-import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
+import {HttpLink, HttpLinkModule} from 'apollo-angular-link-http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -21,9 +21,12 @@ import {SobreNosotrosComponent} from './components/info/sobre-nosotros/sobre-nos
 import {DireccionComponent} from './components/info/direccion/direccion.component';
 import {ContactanosComponent} from './components/info/contactanos/contactanos.component';
 import {ChatBasicoComponent} from './components/info/chat-basico/chat-basico.component';
-import { BannerOfertaComponent } from './components/info/banner-oferta/banner-oferta.component';
-import { VideoYoutubePipe } from './pipes/video-youtube.pipe';
-import { TextoHtmlPipe } from './pipes/texto-html.pipe';
+import {BannerOfertaComponent} from './components/info/banner-oferta/banner-oferta.component';
+import {VideoYoutubePipe} from './pipes/video-youtube.pipe';
+import {TextoHtmlPipe} from './pipes/texto-html.pipe';
+import {FabRedesComponent} from './components/templates/fab-redes/fab-redes.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -43,7 +46,9 @@ import { TextoHtmlPipe } from './pipes/texto-html.pipe';
         ChatBasicoComponent,
         BannerOfertaComponent,
         VideoYoutubePipe,
-        TextoHtmlPipe
+        TextoHtmlPipe,
+        FabRedesComponent,
+
     ],
     imports: [
         BrowserModule,
@@ -51,7 +56,10 @@ import { TextoHtmlPipe } from './pipes/texto-html.pipe';
         ApolloModule,
         HttpLinkModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

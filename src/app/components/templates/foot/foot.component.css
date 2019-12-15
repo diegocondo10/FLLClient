@@ -1,22 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500);
+
 footer.footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
-  
+
 #main-foot .list-inline-item {
     display: inline-block;
     font-size: 1.3rem;
 }
-  
+
 #main-foot .list-inline-item:not(:last-child) {
     margin-right: 0.6rem;
 }
-  
+
 #main-foot .list-inline-item a {
     color: white;
     text-decoration: none;
     padding: 4px;
 }
+
 /*
 #main-foot .list-inline-item a:hover {
     color: black;
@@ -50,3 +53,4 @@ footer.footer {
     box-shadow: 0 6px 14px 0 #666;
     transform: scale(1.05);
 }
+

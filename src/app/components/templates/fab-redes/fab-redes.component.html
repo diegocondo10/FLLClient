@@ -1,0 +1,18 @@
+<div class="fab-container">
+    <button mat-fab class="fab-toggler bg-orange"
+            (click)="onToggleFab()">
+        <i class="material-icons">message</i>
+    </button>
+    <div>
+        <button *ngFor="let btn of buttons"
+                mat-mini-fab
+                class="btn-danger"
+                color="secondary"
+
+        >
+            <a class="material-icons" [href]="btn.link" target="_blank">
+                <img class="img-fluid rounded" [src]="btn.icon" alt="">
+            </a>
+        </button>
+    </div>
+</div>
