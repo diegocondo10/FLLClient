@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {PropiedadesService} from '../../../services/propiedades.service';
-import {Router, ActivatedRoute} from '@angular/router';
-import {Propiedad} from '../../../models/appCore';
-import {DomSanitizer} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { PropiedadesService } from '../../../services/propiedades.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Propiedad } from '../../../models/appCore';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-propiedad-info',
@@ -59,5 +59,14 @@ export class PropiedadInfoComponent implements OnInit {
             }
         });
     }
+
+
+    verificarCalleSecundaria() {
+        if (this.propiedad.calleSecundaria) {
+            return `y ${this.propiedad.calleSecundaria}`
+        }
+        return null;
+    }
+
 
 }

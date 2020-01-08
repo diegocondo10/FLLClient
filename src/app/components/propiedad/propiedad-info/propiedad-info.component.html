@@ -11,8 +11,7 @@
 
 
                 <div id="carouselExampleIndicators" class="carousel slide"
-                     *ngIf="propiedad.propiedadfotoSet.length >0; else sinImagen"
-                     data-ride="carousel">
+                    *ngIf="propiedad.propiedadfotoSet.length >0; else sinImagen" data-ride="carousel">
 
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" [ngClass]="{'active':i==0}"
@@ -20,12 +19,9 @@
                     </ol>
                     <div class="carousel-inner">
 
-                        <div class="carousel-item"
-                             [ngClass]="{'active': i==0 }"
-                             *ngFor="let foto of propiedad.propiedadfotoSet;let i = index;">
-                            <img
-                                    [src]="foto.url | urlFoto"
-                                    class="d-block w-100 propiedad-img" alt="...">
+                        <div class="carousel-item" [ngClass]="{'active': i==0 }"
+                            *ngFor="let foto of propiedad.propiedadfotoSet;let i = index;">
+                            <img [src]="foto.url | urlFoto" class="d-block w-100 propiedad-img" alt="...">
                         </div>
 
                     </div>
@@ -50,10 +46,9 @@
 
 
                 <div class="bg-bluedark mt-5 embed-responsive embed-responsive-16by9" *ngIf="propiedad.urlVideo">
-                    <iframe class="embed-responsive-item" [src]="propiedad.urlVideo|videoYoutube"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" [src]="propiedad.urlVideo|videoYoutube" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
 
             </div>
@@ -71,8 +66,11 @@
                     </button>
                 </div>
 
-                <p class="lead mb-0 mt-2"><strong>Dirrecion:</strong> {{propiedad.callePrincipal}}
-                    y {{propiedad.calleSecundaria}}</p>
+                <p class="lead mb-0 mt-2">
+                    <strong>Dirrecion:</strong>
+                    {{propiedad.callePrincipal}}
+                    {{verificarCalleSecundaria()}}
+                </p>
                 <p class="lead mb-0">Area total: {{propiedad.areaTotal}} mt2</p>
                 <p class="lead mb-0">Area construnccion: {{propiedad.areaConstruccion}} mt2</p>
 
