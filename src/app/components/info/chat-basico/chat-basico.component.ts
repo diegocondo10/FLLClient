@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {MensajeBot} from '../../../models/appCore';
-import {BootService} from '../../../services/boot.service';
+import { Component, OnInit } from '@angular/core';
+import { MensajeBot } from '../../../models/appCore';
+import { BootService } from '../../../services/boot.service';
 
 @Component({
     selector: 'app-chat-basico',
@@ -28,14 +28,14 @@ export class ChatBasicoComponent implements OnInit {
                 this.ip = res.ip;
             },
             err => {
-            console.log('No obtuvimos categorias');
-            console.log(err);
+                console.log('No obtuvimos categorias');
+                console.log(err);
             }
         );
     }
 
     async ngOnInit() {
-        
+
     }
 
     public togleChat() {
@@ -55,7 +55,7 @@ export class ChatBasicoComponent implements OnInit {
                 this.msgBot = this.getMensajeBienvenida();
                 this.enviarMsgBot(this.msgBot);
             }
-            
+
         }
     }
 
@@ -89,7 +89,8 @@ export class ChatBasicoComponent implements OnInit {
             let i = document.createElement('img');
             f.classList.add('flecha-derecha');
             i.classList.add('foto');
-            i.src = 'https://avatars0.githubusercontent.com/u/42211711?s=460&v=4';
+
+            i.src = '../../../../assets/fll/imgBoot.jpeg';
             ctn.classList.add('mensaje-cliente', 'mensaje');
             c.classList.add('contenido');
 
@@ -164,7 +165,7 @@ export class ChatBasicoComponent implements OnInit {
 
         MENSAJES.appendChild(ctn);
         this.scrollCajaMsgDown(MENSAJES);
-        
+
         this.enviarMensaje(this.msgSinResponder);
         this.msgSinResponder = '';
     }

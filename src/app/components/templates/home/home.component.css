@@ -1,4 +1,3 @@
-
 header.cabecera {
     position: relative;
     background-color: #343a40;
@@ -25,7 +24,7 @@ header h1 {
 .color-blanco {
     color: #FFF !important;
 }
-  
+
 header.cabecera .overlay {
     position: absolute;
     background-color: #212529;
@@ -35,41 +34,61 @@ header.cabecera .overlay {
     left: 0;
     opacity: 0.3;
 }
-  
+
 header.cabecera h1 {
     font-size: 2rem;
 }
-  
+
 @media (min-width: 768px) {
     header.cabecera {
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
     header.cabecera h1 {
-        font-size: 3rem;  
+        font-size: 3rem;
     }
 }
 
 /* Para lo que ofertamos  */
 
-
 .nosotros-icons {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
-  
+
 .nosotros-icons .nosotros-icons-item {
     max-width: 20rem;
 }
-  
+
 .nosotros-icons .nosotros-icons-item .nosotros-icons-icon {
     height: 8rem;
 }
-  
+
 .nosotros-icons .nosotros-icons-item .nosotros-icons-icon i {
     font-size: 6.5rem;
 }
-  
+
 .nosotros-icons .nosotros-icons-item:hover .nosotros-icons-icon i {
     font-size: 7rem;
+}
+
+.carousel {
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 40vw;
+}
+
+.item-img {
+    grid-area: a;
+    -webkit-flex: 1 1;
+    flex: 1 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 40vw;
 }
