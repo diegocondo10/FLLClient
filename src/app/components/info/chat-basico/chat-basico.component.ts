@@ -90,7 +90,7 @@ export class ChatBasicoComponent implements OnInit {
             f.classList.add('flecha-derecha');
             i.classList.add('foto');
 
-            i.src = '../../../../assets/fll/imgBoot.jpeg';
+            i.src = '../../../../assets/fll/usuario.png';
             ctn.classList.add('mensaje-cliente', 'mensaje');
             c.classList.add('contenido');
 
@@ -151,7 +151,7 @@ export class ChatBasicoComponent implements OnInit {
         let i = document.createElement('img');
         f.classList.add('flecha-izquierda');
         i.classList.add('foto');
-        i.src = 'https://pbs.twimg.com/profile_images/876845658472316929/9jQcgE7P_reasonably_small.jpg';
+        i.src = '../../../../assets/fll/imgBoot.jpeg';
         ctn.classList.add('mensaje-bot', 'mensaje');
         c.classList.add('contenido');
 
