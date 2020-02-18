@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-fab-redes',
@@ -14,7 +14,7 @@ export class FabRedesComponent implements OnInit {
         },
         {
             icon: '../../../../assets/whatsapp.png',
-            link: 'https://api.whatsapp.com/send?phone=593996503200'
+            link: 'https://api.whatsapp.com/send?phone=593985942758'
         },
     ];
     buttons = [];
