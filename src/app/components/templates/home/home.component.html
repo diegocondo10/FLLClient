@@ -1,124 +1,104 @@
-<!-- Cabecera
-<header class="cabecera text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <h1 class="mb-5">Grupo Inmobiliario FLL</h1>
-            </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <button type="submit" class="btn btn-block bg-orange h3">Ver propiedades</button>
-            </div>
-        </div>
-    </div>
-</header>
- -->
-<!--
-<div class="container">
--->
 <div class="row no-gutters justify-content-center">
 
-    <div class="col-12">
+  <div class="col-12">
 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf="propiedades">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf="propiedades">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" [ngClass]="{'active':i==0}"
+            *ngFor="let propiedad of propiedades; let i = index;" data-slide-to="0">
+        </li>
+      </ol>
+      <div class="carousel-inner">
 
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" [ngClass]="{'active':i==0}"
-                    *ngFor="let propiedad of propiedades; let i = index;" data-slide-to="0">
-                </li>
-            </ol>
-            <div class="carousel-inner">
+        <div class="carousel-item" [ngClass]="{'active': i==0 }"
+             *ngFor="let propiedad of propiedades;let i = index;">
 
-                <div class="carousel-item" [ngClass]="{'active': i==0 }"
-                    *ngFor="let propiedad of propiedades;let i = index;">
+          <img
+            [src]="propiedad.urlFotoPrincipal | urlFoto" class="item-img" alt="..."
+            routerLink="/propiedad/{{propiedad.id}}">
 
-                    <img [src]="propiedad.urlFotoPrincipal | urlFoto" class="item-img" alt="..."
-                        routerLink="/propiedad/{{propiedad.id}}">
+          <div class="carousel-caption text-center">
+            <h3 *ngIf="propiedad.tipoPropiedad" class="d-none d-md-block">
+              {{propiedad.tipoPropiedad.nombre}}
+            </h3>
+            <h6 class="d-block d-sm-none" *ngIf="propiedad.tipoPropiedad">
+              {{propiedad.tipoPropiedad.nombre}}
+            </h6>
 
-                    <div class="carousel-caption text-center">
-                        <h3 *ngIf="propiedad.tipoPropiedad" class="d-none d-md-block">
-                            {{propiedad.tipoPropiedad.nombre}}
-                        </h3>
-                        <h6 class="d-block d-sm-none" *ngIf="propiedad.tipoPropiedad">{{propiedad.tipoPropiedad.nombre}}
-                        </h6>
+            <h4 class="d-none d-sm-block">{{propiedad.titulo}}</h4>
+            <h6 class="d-block d-sm-none">{{propiedad.titulo}}</h6>
 
-                        <h4 class="d-none d-sm-block">{{propiedad.titulo}}</h4>
-                        <h6 class="d-block d-sm-none">{{propiedad.titulo}}</h6>
-
-                        <button class="btn btn-sm bg-orange d-none d-md-inline-block"
-                            routerLink="/propiedad/{{propiedad.id}}">
-                            Ver Más
-                        </button>
-                    </div>
-
-                </div>
-
-
-
-
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Siguiente</span>
-                </a>
-
-
-            </div>
-
+            <button class="btn btn-sm bg-orange d-none d-md-inline-block"
+                    routerLink="/propiedad/{{propiedad.id}}">
+              Ver Más
+            </button>
+          </div>
 
         </div>
 
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+
+
+      </div>
+
+
     </div>
 
+  </div>
+
 </div>
--->
 
 <app-propiedad-list [paginacion]="paginacion"></app-propiedad-list>
 
 
-
 <!-- HOME -->
 <app-banner-oferta></app-banner-oferta>
-
-
 <!-- HOME -->
 
 <!-- Ofertas -->
 <section class="nosotros-icons bg-light text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <div class="nosotros-icons-item mx-auto mb-5 mb-lg-3">
-                    <div class="nosotros-icons-icon d-flex">
-                        <img class="mx-auto" src="../../../../assets/venta.png" alt="">
-                    </div>
-                    <h3>Venta</h3>
-                    <p class="lead mb-0">Casas, departamentos, terrenos, naves.</p>
-                </div>
-            </div>
 
-            <div class="col-10 col-lg-4 mx-auto embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kN8IC7mlEFg" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-
-            <div class="col-12 col-lg-4">
-                <div class="nosotros-icons-item mx-auto mb-5 mb-lg-3">
-                    <div class="nosotros-icons-icon d-flex">
-                        <img class="mx-auto" src="../../../../assets/compra.png" alt="">
-                    </div>
-                    <h3>Compra</h3>
-                    <p class="lead mb-0">Casas, departamentos, terrenos, naves.</p>
-                </div>
-            </div>
-
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="nosotros-icons-item mx-auto mb-5 mb-lg-3">
+          <div class="nosotros-icons-icon d-flex">
+            <img class="mx-auto" src="../../../../assets/venta.png" alt="">
+          </div>
+          <h3>Venta</h3>
+          <p class="lead mb-0">Casas, departamentos, terrenos, naves.</p>
         </div>
+      </div>
+
+      <div class="col-10 col-lg-4 mx-auto embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item" src="https://www.youtube.com/embed/kN8IC7mlEFg"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="nosotros-icons-item mx-auto mb-5 mb-lg-3">
+          <div class="nosotros-icons-icon d-flex">
+            <img class="mx-auto" src="../../../../assets/compra.png" alt="">
+          </div>
+          <h3>Compra</h3>
+          <p class="lead mb-0">Casas, departamentos, terrenos, naves.</p>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <app-contacto></app-contacto>
