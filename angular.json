@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/FLLClient",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,7 +21,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css",
@@ -86,7 +87,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css",
@@ -123,8 +125,17 @@
               "devServerTarget": "FLLClient:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/",
+            "netlifyToken": "efb83f3d2d4b6186b21d39a94ab1e75a3976e55b86d132d325c7ecea44a99eb8",
+            "siteId": "47001fac-e463-4892-9da8-39ea07eeb8bd"
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "FLLClient"
 }
